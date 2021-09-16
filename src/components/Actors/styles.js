@@ -28,6 +28,7 @@ export const useStyles = makeStyles((theme) => ({
 		width: "138px",
 		margin: "10px",
 		borderRadius: "10px",
+		border: "1px solid #e3e3e3",
 		overflow: "hidden",
 		boxShadow: "0 2px 8px rgb(0 0 0 / 10%)"
 	},

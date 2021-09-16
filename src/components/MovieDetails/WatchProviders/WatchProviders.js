@@ -26,14 +26,14 @@ const WatchProviders = ({movieId}) => {
 		}
 		getProviders();
 	}, [movieId]);
-	console.log(providers)
+	
 	if (!providers){
 		return null
 	}
 	return (
 	   <Box>
 			{providers.flatrate && <Box className={classes.providersBox}>
-				<Typography className={classes.smallTitle} >Stream :</Typography>
+				<Typography className={classes.providersTitle} >Streaming :</Typography>
 			{ providers.flatrate.map(provider => {
 				return	(
 					<Box key={provider.logo_path} className={classes.providerLogo}>
@@ -42,7 +42,7 @@ const WatchProviders = ({movieId}) => {
 				})}
 			</Box>}
 			{ providers.buy && <Box className={classes.providersBox}>
-				<Typography className={classes.smallTitle} >Buy :</Typography>
+				<Typography className={classes.providersTitle} >Buy :</Typography>
 				{providers.buy.map(provider => {
 				return	(
 					<Box key={provider.logo_path} className={classes.providerLogo}>

@@ -71,8 +71,8 @@ export const useStyles = makeStyles((theme) => ({
 		overflow: "hidden",
 		height: "50px"
 	},
-	smallTitle: {
+	providersTitle: {
 		dispaly: "block",
-		width: "80px"
+		width: "85px"
 	}
 }));

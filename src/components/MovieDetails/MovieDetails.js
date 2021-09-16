@@ -26,7 +26,7 @@ const MovieDetails= () => {
 	
 	
 	if (!details.title || !credits.crew){
-		return  <Spiner />
+		return <Box className={classes.darkBg}> <Spiner /></Box>
 	}
 	
 	const JOB_TITLES = ["Director", "Writer", "Story", "Creator"];

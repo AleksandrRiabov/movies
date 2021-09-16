@@ -7,7 +7,6 @@ import {useApiContext} from "../../apiContext"
 const Actors = () => {
 	const {credits} = useApiContext();
 	const classes = useStyles();
-	console.log(credits.cast)
 	
 	if (!credits.cast){
 		return null
