@@ -41,6 +41,7 @@ const StatisticsBar = () => {
 					</Box>
 				</Box>
 			</Box>
+			<hr/>
 		</Box>
 	);
 };

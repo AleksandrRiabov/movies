@@ -11,13 +11,14 @@ const useStyles = makeStyles((theme) => ({
 	iconsWrapper: {
 		width: '100%',
 		display: 'flex',
-		justifyContent: 'space-between',
+		marginLeft: "-10px"
 	},
 	link: {
 		color: "#000",
 		"&:hover": {
 			color: "grey"
-		}
+		},
+		padding: "0 10px"
 	}
 }));
 
