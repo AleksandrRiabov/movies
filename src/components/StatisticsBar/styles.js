@@ -8,5 +8,5 @@ export const useStyles = makeStyles((theme) => ({
   },
 	fact: {
 		margin: "30px 0"
-	}
+	},
 }));

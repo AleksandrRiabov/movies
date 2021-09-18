@@ -12,8 +12,9 @@ export const getMovieDetails = async (movieId) => {
 }
 
 
-export const getMovieCredits = async (movieId) => {
-	const url = `${API_URL}/movie/${movieId}/credits?api_key=${API_KEY_3}`
+
+export const getMovieDetail = async ({id, query}) => {
+	const url = `${API_URL}/movie/${id}/${query}?api_key=${API_KEY_3}`
 	try{
 		const response = await fetch(url);
 		const data = await response.json();
@@ -22,5 +23,4 @@ export const getMovieCredits = async (movieId) => {
 		console.log(err);
 	}
 }
-
 
