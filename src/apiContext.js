@@ -14,7 +14,8 @@ const initialSatate = {
 	credits: {},
 	details: {},
 	socialIds: {},
-	providers: []
+	providers: [],
+	recommended: {}
 };
 
 const AppProvider = ({ children }) => {
@@ -97,9 +98,9 @@ const AppProvider = ({ children }) => {
 	}
 	
 	
-	const getRecomendet = async(id) => {
-		const recomendet = await getMovieDetail({id, query: "recommendations"});
-		dicpatch({ type: 'SET RECOMENDET', payload: recomendet });
+	const getRecommended = async(id) => {
+		const recommended = await getMovieDetail({id, query: "recommendations"});
+		dicpatch({ type: 'SET RECOMMENDED', payload: recommended });
 	}
 
 	const setPage = (value) => {
@@ -125,8 +126,8 @@ const AppProvider = ({ children }) => {
 		getSocialIds,
 		providers: state.providers, 
 		getProviders,
-		recomendet: state.recomendet,
-		getRecomendet,
+		recommended: state.recommended,
+		getRecommended,
 		setPage
 	};
 

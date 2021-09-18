@@ -20,8 +20,8 @@ const apiReducer = (state, action) => {
 			return { ...state, socialIds: action.payload };
 		case 'SET PROVIDERS':
 			return { ...state, providers: action.payload };
-		case 'SET RECOMENDET':
-			return { ...state, recomendet: action.payload };
+		case 'SET RECOMMENDED':
+			return { ...state, recommended: action.payload };
 		default:
 			return state;
 	}

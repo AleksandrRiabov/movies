@@ -18,9 +18,8 @@ const MovieDetails = () => {
 		window.scroll(0,0)
 		getDetails(id);
 		getCredits(id);
-
 		return () => clearDetails();
-	}, []);
+	}, [id]);
 
 	
 	if (!details.title || !credits.crew) {
