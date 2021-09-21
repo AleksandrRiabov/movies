@@ -1,4 +1,5 @@
 import React from 'react';
+import {useHistory, useLocation, Link} from "react-router-dom";
 import { alpha, makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -31,6 +32,7 @@ const useStyles = makeStyles((theme) => ({
 		[theme.breakpoints.up('sm')]: {
 			display: 'block',
 		},
+		color: "#fff"
 	},
 	search: {
 		position: 'relative',
@@ -85,7 +87,9 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Navbar() {
 	const { setQuery, query } = useApiContext();
-
+	const history = useHistory();
+	const location = useLocation();
+	
 	const classes = useStyles();
 	const [anchorEl, setAnchorEl] = React.useState(null);
 	const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
@@ -93,6 +97,11 @@ export default function Navbar() {
 	const isMenuOpen = Boolean(anchorEl);
 	const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
+	const checkLoaction = () => {
+		if (location.pathname !== "/"){
+			history.push("/");
+		}
+	}
 	const handleProfileMenuOpen = (event) => {
 		setAnchorEl(event.currentTarget);
 	};
@@ -179,15 +188,22 @@ export default function Navbar() {
 					>
 						<MenuIcon />
 					</IconButton>
+					<Link to="/">
 					<Typography className={classes.title} variant="h6" noWrap>
 						Movies App
 					</Typography>
+					</Link>
 					<div className={classes.search}>
 						<div className={classes.searchIcon}>
 							<SearchIcon />
 						</div>
 						<InputBase
-							onChange={(e) => setQuery(e.target.value)}
+							onChange={(e) => {
+								setQuery(e.target.value);
+								checkLoaction();
+							}
+									 
+									 }
 							placeholder="Search…"
 							value={query}
 							classes={{
