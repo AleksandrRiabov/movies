@@ -16,7 +16,6 @@ const PersonPage = () => {
 	const classes = useStyles();
 	const { id } = useParams();
 
-	console.log("hhhhh")
 	const [person, setPerson] = useState({});
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState({ isError: false, message: '' });
@@ -53,7 +52,6 @@ const PersonPage = () => {
 		);
 	}
 
-	console.log(person)
 	if (error.isError) {
 		return <Box className={classes.root}>{error.message}</Box>;
 	}

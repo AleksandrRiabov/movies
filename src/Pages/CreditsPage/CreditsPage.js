@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { useFetchDetails } from '../../hooks/useFetchDetails';
 import { useParams } from 'react-router-dom';
 import AllCredits from "./AllCredits/AllCredits";
@@ -8,17 +8,17 @@ import Box from '@material-ui/core/Box';
 import {useStyles } from './styles';
 
 
-
 const CreditsPage = () => {
+	window.scroll(0, 0);
 	const { id } = useParams();
 	const classes = useStyles();
 	const { data, loading, error } = useFetchDetails({ id, extra: ['credits'] });
-
+  
 	if (loading) {
 		return (
-			<Box>
+			<Box className={classes.creditsPage}>
 				{' '}
-				<Spiner />
+				<Spiner color="#000"/>
 			</Box>
 		);
 	}
@@ -26,7 +26,7 @@ const CreditsPage = () => {
 	if (error.isError) {
 		return <Box>{error.message}</Box>;
 	}
-	console.log(data);
+
 	return (
 		<Box className={classes.creditsPage}>
 			<MovieHeaderSmall movie={data} />

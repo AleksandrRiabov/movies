@@ -2,8 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
-import Grid from '@material-ui/core/Grid';
-import Container from '@material-ui/core/Container';
 import { useStyles } from './styles';
 import img_placeholder_W from '../../../../images/img_placeholder_W.jpg';
 import img_placeholder_M from '../../../../images/img_placeholder_M.jpg';
