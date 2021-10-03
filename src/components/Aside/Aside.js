@@ -8,8 +8,6 @@ import SortBy from "../SortBy/SortBy";
 const useStyles = makeStyles({
   root: {
     width: 230,
-	 
-	 color: "#fff" 
   },
 });
 

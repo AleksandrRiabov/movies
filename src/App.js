@@ -1,33 +1,46 @@
 import React, { Component } from 'react';
 import './App.css';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route
-} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { MovieDetailsProvider } from './context/movieDetailsContext';
 
-import Navbar from "./components/Navbar/Navbar";
-import Movies from "./Pages/Movies/Movies";
-import MovieDetailsPage from "./Pages/MovieDetailsPage/MovieDetailsPage";
+import Navbar from './components/Navbar/Navbar';
+import Movies from './Pages/Movies/Movies';
+import MovieDetailsPage from './Pages/MovieDetailsPage/MovieDetailsPage';
+import PersonPage from './Pages/PersonPage/PersonPage';
+import ReviewsPage from './Pages/ReviewsPage/ReviewsPage';
+import Footer from './components/Footer/Footer';
 
 class App extends Component {
-  render() {
-    return (
-      <div >
-			<Navbar />
+	render() {
+		return (
+			<div>
 				<Router>
+					<Navbar />
 					<Switch>
 						<Route path="/" exact>
 							<Movies />
 						</Route>
-						<Route path="/details/:id">
-							<MovieDetailsPage />
+
+						<Route path="/movie/:id" exact>
+							<MovieDetailsProvider>
+								<MovieDetailsPage />
+							</MovieDetailsProvider>
+						</Route>
+						<Route path="/movie/:id/reviews" exact>
+							<MovieDetailsProvider>
+								<ReviewsPage />
+							</MovieDetailsProvider>
+						</Route>
+
+						<Route path="/person/:id">
+							<PersonPage />
 						</Route>
 					</Switch>
+					<Footer />
 				</Router>
-		</div>
-    );
-  }
+			</div>
+		);
+	}
 }
 
 export default App;

@@ -1,5 +1,5 @@
 import React from 'react';
-import {useHistory, useLocation, Link} from "react-router-dom";
+import { useHistory, useLocation, Link } from 'react-router-dom';
 import { alpha, makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -12,10 +12,10 @@ import Menu from '@material-ui/core/Menu';
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
 import AccountCircle from '@material-ui/icons/AccountCircle';
-import MailIcon from '@material-ui/icons/Mail';
-import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
-import { useApiContext } from '../../apiContext';
+import { useMoviesContext } from '../../context/moviesContext';
+
+import Login from "./Login/Login";
 
 const useStyles = makeStyles((theme) => ({
 	grow: {
@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
 		[theme.breakpoints.up('sm')]: {
 			display: 'block',
 		},
-		color: "#fff"
+		color: '#fff',
 	},
 	search: {
 		position: 'relative',
@@ -83,57 +83,40 @@ const useStyles = makeStyles((theme) => ({
 			display: 'none',
 		},
 	},
+	marginRight: {
+		marginRight: "10px"
+	}
 }));
 
 export default function Navbar() {
-	const { setQuery, query } = useApiContext();
+	const { setQuery, query } = useMoviesContext();
 	const history = useHistory();
 	const location = useLocation();
-	
+
 	const classes = useStyles();
-	const [anchorEl, setAnchorEl] = React.useState(null);
 	const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
-	const isMenuOpen = Boolean(anchorEl);
 	const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
 	const checkLoaction = () => {
-		if (location.pathname !== "/"){
-			history.push("/");
+		if (location.pathname !== '/') {
+			history.push('/');
 		}
-	}
-	const handleProfileMenuOpen = (event) => {
-		setAnchorEl(event.currentTarget);
 	};
+
 
 	const handleMobileMenuClose = () => {
 		setMobileMoreAnchorEl(null);
 	};
 
-	const handleMenuClose = () => {
-		setAnchorEl(null);
-		handleMobileMenuClose();
-	};
+
 
 	const handleMobileMenuOpen = (event) => {
 		setMobileMoreAnchorEl(event.currentTarget);
 	};
 
-	const menuId = 'primary-search-account-menu';
-	const renderMenu = (
-		<Menu
-			anchorEl={anchorEl}
-			anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
-			id={menuId}
-			keepMounted
-			transformOrigin={{ vertical: 'top', horizontal: 'right' }}
-			open={isMenuOpen}
-			onClose={handleMenuClose}
-		>
-			<MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-			<MenuItem onClick={handleMenuClose}>My account</MenuItem>
-		</Menu>
-	);
+	
+
 
 	const mobileMenuId = 'primary-search-account-menu-mobile';
 	const renderMobileMenu = (
@@ -147,31 +130,20 @@ export default function Navbar() {
 			onClose={handleMobileMenuClose}
 		>
 			<MenuItem>
+				<p>Login</p>
 				<IconButton aria-label="show 4 new mails" color="inherit">
-					<Badge badgeContent={4} color="secondary">
-						<MailIcon />
+					<Badge  color="secondary">
+						<AccountCircle />
 					</Badge>
 				</IconButton>
-				<p>Messages</p>
 			</MenuItem>
 			<MenuItem>
+				<p>Logoff</p>
 				<IconButton aria-label="show 11 new notifications" color="inherit">
-					<Badge badgeContent={11} color="secondary">
-						<NotificationsIcon />
+					<Badge color="secondary">
+						<AccountCircle />
 					</Badge>
 				</IconButton>
-				<p>Notifications</p>
-			</MenuItem>
-			<MenuItem onClick={handleProfileMenuOpen}>
-				<IconButton
-					aria-label="account of current user"
-					aria-controls="primary-search-account-menu"
-					aria-haspopup="true"
-					color="inherit"
-				>
-					<AccountCircle />
-				</IconButton>
-				<p>Profile</p>
 			</MenuItem>
 		</Menu>
 	);
@@ -189,9 +161,9 @@ export default function Navbar() {
 						<MenuIcon />
 					</IconButton>
 					<Link to="/">
-					<Typography className={classes.title} variant="h6" noWrap>
-						Movies App
-					</Typography>
+						<Typography className={classes.title} variant="h6" noWrap>
+							Movies App
+						</Typography>
 					</Link>
 					<div className={classes.search}>
 						<div className={classes.searchIcon}>
@@ -201,9 +173,7 @@ export default function Navbar() {
 							onChange={(e) => {
 								setQuery(e.target.value);
 								checkLoaction();
-							}
-									 
-									 }
+							}}
 							placeholder="Search…"
 							value={query}
 							classes={{
@@ -215,26 +185,7 @@ export default function Navbar() {
 					</div>
 					<div className={classes.grow} />
 					<div className={classes.sectionDesktop}>
-						<IconButton aria-label="show 4 new mails" color="inherit">
-							<Badge badgeContent={4} color="secondary">
-								<MailIcon />
-							</Badge>
-						</IconButton>
-						<IconButton aria-label="show 17 new notifications" color="inherit">
-							<Badge badgeContent={17} color="secondary">
-								<NotificationsIcon />
-							</Badge>
-						</IconButton>
-						<IconButton
-							edge="end"
-							aria-label="account of current user"
-							aria-controls={menuId}
-							aria-haspopup="true"
-							onClick={handleProfileMenuOpen}
-							color="inherit"
-						>
-							<AccountCircle />
-						</IconButton>
+						<Login />
 					</div>
 					<div className={classes.sectionMobile}>
 						<IconButton
@@ -250,7 +201,6 @@ export default function Navbar() {
 				</Toolbar>
 			</AppBar>
 			{renderMobileMenu}
-			{renderMenu}
 		</div>
 	);
 }

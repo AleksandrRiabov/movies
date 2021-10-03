@@ -6,7 +6,6 @@ import Aside from "../../components/Aside/Aside";
 import Grid from "@material-ui/core/Grid";
 import Hidden from '@material-ui/core/Hidden';
 import Container from '@material-ui/core/Container';
-import Pagination from "../../components/Pagination/Pagination";
 
 const Movies = () => {
 	console.log("render Movies")

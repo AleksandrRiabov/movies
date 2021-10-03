@@ -1,0 +1,79 @@
+import React from 'react';
+import Box from '@material-ui/core/Box';
+import FacebookIcon from '@material-ui/icons/Facebook';
+import InstagramIcon from '@material-ui/icons/Instagram';
+import TwitterIcon from '@material-ui/icons/Twitter';
+import LinkIcon from '@material-ui/icons/Link';
+import { makeStyles } from '@material-ui/core/styles';
+
+
+const useStyles = makeStyles((theme) => ({
+	root: {
+		position: 'relative',
+	},
+	iconsWrapper: {
+		width: '100%',
+		display: 'flex',
+		marginLeft: '-10px',
+	},
+	link: {
+		color: '#000',
+		'&:hover': {
+			color: 'grey',
+		},
+		padding: '0 10px',
+	},
+}));
+
+const SocialLinks = ({details: { external_ids, homepage } }) => {
+	const classes = useStyles();
+	
+	console.log('social links');
+
+	return (
+		<Box className={classes.iconsWrapper}>
+			{external_ids['facebook_id'] && (
+				<a
+					href={`https://www.facebook.com/${external_ids['facebook_id']}`}
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					<Box>
+						<FacebookIcon className={classes.link} fontSize="large" />
+					</Box>
+				</a>
+			)}
+			{external_ids['instagram_id'] && (
+				<a
+					href={`https://www.instagram.com/${external_ids['instagram_id']}`}
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					<Box>
+						<InstagramIcon className={classes.link} fontSize="large" />
+					</Box>
+				</a>
+			)}
+			{external_ids['twitter_id'] && (
+				<a
+					href={`https://www.twitter.com/${external_ids['twitter_id']}`}
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					<Box>
+						<TwitterIcon className={classes.link} fontSize="large" />
+					</Box>
+				</a>
+			)}
+			{homepage && (
+				<a href={homepage} target="_blank" rel="noopener noreferrer">
+					<Box>
+						<LinkIcon className={classes.link} fontSize="large" />
+					</Box>
+				</a>
+			)}
+		</Box>
+	);
+};
+
+export default SocialLinks;

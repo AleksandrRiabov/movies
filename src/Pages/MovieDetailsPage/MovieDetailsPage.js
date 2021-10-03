@@ -1,55 +1,35 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import { useStyles } from './styles';
 import Box from '@material-ui/core/Box';
 import Container from '@material-ui/core/Container';
-import MovieDetails from '../../components/MovieDetails/MovieDetails';
-import Actors from '../../components/Actors/Actors';
-import StatisticsBar from '../../components/StatisticsBar/StatisticsBar';
-import RecomendetMovies from '../../components/RecomendetMovies/RecomendetMovies';
+import MovieDetails from './MovieDetails/MovieDetails';
+import Cast from './Cast/Cast';
+import StatisticsBar from './StatisticsBar/StatisticsBar';
+import RecomendetMovies from './RecomendetMovies/RecomendetMovies';
+import ReviewsSection from './ReviewsSection/ReviewsSection';
+import MovieTrailer from './MovieTrailer/MovieTrailer';
 
-const useStyles = makeStyles((theme) => ({
-	whiteSection: {
-		display: 'flex',
-		background: '#fff',
-		marginBottom: '500px',
-	},
-	leftColumn: {
-		width: 'calc(100vw - 80px - 268px)',
-		maxWidth: '900px',
-		position: 'relative',
-		paddingRight: '30px',
-	},
-	witeSectionWrapper: {
-		display: 'flex',
-	},
-	rightSideColorTransition: {
-		width: '100px',
-		height: '100%',
-		position: 'absolute',
-		top: 0,
-		right: 0,
-		background: 'linear-gradient(270deg, rgba(255,255,255,1) 45%, rgba(0,0,0,0) 99%)',
-	},
-}));
+console.log('Details page');
 
 const MovieDetailsPage = () => {
 	const classes = useStyles();
 
 	return (
-		<div>
+		<Box>
 			<MovieDetails />
 			<Box className={classes.whiteSection}>
 				<Container className={classes.witeSectionWrapper}>
 					<Box className={classes.leftColumn}>
-						<Actors />
-						<hr/>
-						<Box className={classes.rightSideColorTransition}></Box>
+						<Cast />
+						<hr />
+						<ReviewsSection />
+						<MovieTrailer />
 						<RecomendetMovies />
 					</Box>
 					<StatisticsBar />
 				</Container>
 			</Box>
-		</div>
+		</Box>
 	);
 };
 

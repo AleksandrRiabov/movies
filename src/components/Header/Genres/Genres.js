@@ -5,7 +5,7 @@ import Container from '@material-ui/core/Container';
 import Box from '@material-ui/core/Box';
 import CancelOutlinedIcon from '@material-ui/icons/CancelOutlined';
 
-import {useApiContext} from "../../../apiContext";
+import {useMoviesContext} from "../../../context/moviesContext";
 import clsx from "clsx";
 import { GENRES} from "../../../api/api";
 
@@ -38,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 const Genres = () => {
-	const { selectedGenres, selectGenre, resetGenres } = useApiContext();
+	const { selectedGenres, selectGenre, resetGenres } = useMoviesContext();
 	const classes = useStyles();
 	return (
 	  <Container>

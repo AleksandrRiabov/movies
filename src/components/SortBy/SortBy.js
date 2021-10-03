@@ -7,7 +7,7 @@ import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import {SORT_BY} from "../../api/api";
 
-import {useApiContext} from "../../apiContext";
+import {useMoviesContext} from "../../context/moviesContext";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -27,7 +27,7 @@ export default function SortBy() {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
 	
-	const {setFilter, filter} = useApiContext();
+	const {setFilter, filter} = useMoviesContext();
 	
 	
   const handleChange = (event) => {
@@ -56,7 +56,7 @@ export default function SortBy() {
           onChange={handleChange}
         >
 			{SORT_BY.map(filter => {
-				return <MenuItem  classes={{color: "red"}} key={filter.filter} value={filter.filter}>{filter.name}</MenuItem>
+				return <MenuItem key={filter.filter} value={filter.filter}>{filter.name}</MenuItem>
 			})}
         </Select>
       </FormControl>

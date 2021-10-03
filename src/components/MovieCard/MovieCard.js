@@ -34,13 +34,13 @@ const useStyles = makeStyles({
 
 export default function MovieCard({ data }) {
 	const classes = useStyles();
-
+	
 	const imgUrl = data.poster_path
 		? `https://image.tmdb.org/t/p/w500${data.poster_path}`
-		: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/1200px-No-Image-Placeholder.svg.png';
+		: "https://via.placeholder.com/300x450";
 
 	return (
-		<Link to={`/details/${data.id}`}>
+		<Link to={`/movie/${data.id}`}>
 			<Card className={classes.root}>
 				<CardActionArea>
 					<CardMedia

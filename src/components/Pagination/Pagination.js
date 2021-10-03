@@ -1,8 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Typography from '@material-ui/core/Typography';
 import Pagination from '@material-ui/lab/Pagination';
-import { useApiContext } from '../../apiContext';
+import { useMoviesContext } from '../../context/moviesContext';
 
 const useStyles = makeStyles((theme) => ({
 	root: {
@@ -18,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function PaginationBar({ totalPages, page }) {
-	const { setPage } = useApiContext();
+	const { setPage } = useMoviesContext();
 	const classes = useStyles();
 	const handleChange = (event, value) => {
 		setPage(value);
