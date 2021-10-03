@@ -16,8 +16,12 @@ const MovieDetails = () => {
 	const { getDetails, details, loading, error } = useMovieDetailsContext();
 
 	useEffect(() => {
-		window.scroll(0, 0);
-		getDetails(id);
+		if (details.id === parseInt(id)) {
+			return;
+		} else {
+			window.scroll(0, 0);
+			getDetails(id);
+		}
 	}, [id]);
 
 	if (loading) {

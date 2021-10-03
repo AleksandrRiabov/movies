@@ -8,6 +8,7 @@ import Movies from './Pages/Movies/Movies';
 import MovieDetailsPage from './Pages/MovieDetailsPage/MovieDetailsPage';
 import PersonPage from './Pages/PersonPage/PersonPage';
 import ReviewsPage from './Pages/ReviewsPage/ReviewsPage';
+import CreditsPage from './Pages/CreditsPage/CreditsPage';
 import Footer from './components/Footer/Footer';
 
 class App extends Component {
@@ -31,7 +32,11 @@ class App extends Component {
 								<ReviewsPage />
 							</MovieDetailsProvider>
 						</Route>
-
+						<Route path="/movie/:id/credits" exact>
+							<MovieDetailsProvider>
+								<CreditsPage />
+							</MovieDetailsProvider>
+						</Route>
 						<Route path="/person/:id">
 							<PersonPage />
 						</Route>

@@ -1,26 +1,18 @@
 import React from 'react';
 import { useFetchDetails } from '../../hooks/useFetchDetails';
 import { useParams } from 'react-router-dom';
-import Reviews from './Reviews/Reviews';
+import AllCredits from "./AllCredits/AllCredits";
 import MovieHeaderSmall from '../../components/MovieHeaderSmall/MovieHeaderSmall';
 import Spiner from '../../components/Spiner/Spiner';
 import Box from '@material-ui/core/Box';
-import { makeStyles } from '@material-ui/core/styles';
+import {useStyles } from './styles';
 
- const useStyles = makeStyles((theme) => ({
-	reviewsPage: {
-		position: 'relative',
-		width: '100%',
-		minHeight: '90vh',
-		background: '#fff',
-		paddingTop: '15px',
-	},
-}));
 
-const ReviewsPage = () => {
+
+const CreditsPage = () => {
 	const { id } = useParams();
 	const classes = useStyles();
-	const { data, loading, error } = useFetchDetails({ id, extra: ['reviews'] });
+	const { data, loading, error } = useFetchDetails({ id, extra: ['credits'] });
 
 	if (loading) {
 		return (
@@ -36,11 +28,11 @@ const ReviewsPage = () => {
 	}
 	console.log(data);
 	return (
-		<Box className={classes.reviewsPage}>
+		<Box className={classes.creditsPage}>
 			<MovieHeaderSmall movie={data} />
-			<Reviews reviews={data.reviews.results} title={data.title} />
+			<AllCredits data={data.credits}/>
 		</Box>
 	);
 };
 
-export default ReviewsPage;
+export default CreditsPage;

@@ -11,7 +11,7 @@ import HorizontalListing from '../../../components/HorizontalListing/HorizontalL
 
 const Cast = () => {
 	const classes = useStyles();
-	const { credits, loading, error } = useMovieDetailsContext();
+	const { movieId, credits, loading, error } = useMovieDetailsContext();
 
 	if (loading) {
 		return (
@@ -64,7 +64,7 @@ const Cast = () => {
 				})}
 				{credits.cast.length > 9 && (
 					<Link
-						to="/allActors"
+						to={`/movie/${movieId}/credits`}
 						style={{
 							display: 'flex',
 							marginLeft: '-10px',
@@ -81,11 +81,11 @@ const Cast = () => {
 					</Link>
 				)}
 			</HorizontalListing>
-			<a href="/">
+			<Link to={`/movie/${movieId}/credits`}>
 				<Typography className={classes.link} variant="h6">
 					{credits.cast.length ? 'Full Cast & Crew' : ''}
 				</Typography>
-			</a>
+			</Link>
 		</>
 	);
 };
