@@ -9,6 +9,16 @@ import { useStyles } from './styles';
 import { Link } from 'react-router-dom';
 import HorizontalListing from '../../../components/HorizontalListing/HorizontalListing';
 
+import img_placeholder_W_138x175 from '../../../images/medium/img_placeholder_W_138x175.jpg';
+import img_placeholder_M_138x175 from '../../../images/medium/img_placeholder_M_138x175.jpg';
+import img_placeholder_NS_138x175 from '../../../images/medium/img_placeholder_NS_138x175.png';
+
+const placeholders = [
+	img_placeholder_NS_138x175,
+	img_placeholder_W_138x175,
+	img_placeholder_M_138x175,
+];
+
 const Cast = () => {
 	const classes = useStyles();
 	const { movieId, credits, loading, error } = useMovieDetailsContext();
@@ -36,10 +46,10 @@ const Cast = () => {
 			<HorizontalListing title="Top Billed Cast">
 				{!credits.cast.length && <p>We don't have any cast added to this movie.</p>}
 				{actors.map((actor) => {
-					const { name, character, profile_path, id } = actor;
+					const { name, character, profile_path, id, gender } = actor;
 					const personImage = profile_path
 						? `https://www.themoviedb.org/t/p/w138_and_h175_face/${profile_path}`
-						: 'https://via.placeholder.com/138x175';
+						: placeholders[gender];
 					return (
 						<Link
 							key={id}

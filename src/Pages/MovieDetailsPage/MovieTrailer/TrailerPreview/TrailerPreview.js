@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useStyles } from './styles';
 import Spiner from '../../../../components/Spiner/Spiner';
 import Box from '@material-ui/core/Box';
-import PlayCircleFilledWhiteIcon from '@material-ui/icons/PlayCircleFilledWhite';
-
+import PlayArrowIcon from '@material-ui/icons/PlayArrow';
 
 const TrailerPreview = ({ id, setShowModal, name }) => {
 	const classes = useStyles();
@@ -13,7 +12,7 @@ const TrailerPreview = ({ id, setShowModal, name }) => {
 			<Spiner color="#000" />
 			<Box
 				className={classes.imgWrapper}
-				onClick={() => setShowModal({show: true, id, name: name})}
+				onClick={() => setShowModal({ show: true, id, name: name })}
 				style={{
 					backgroundImage: `url(https://i.ytimg.com/vi/${id}/hqdefault.jpg)`,
 					boxSizing: 'border-box',
@@ -22,7 +21,9 @@ const TrailerPreview = ({ id, setShowModal, name }) => {
 					backgroundSize: 'cover',
 				}}
 			>
-				<PlayCircleFilledWhiteIcon className={classes.playIcon} />
+				<Box className={classes.playCircle}>
+					<PlayArrowIcon className={classes.playIcon} />
+				</Box>
 			</Box>
 		</Box>
 	);

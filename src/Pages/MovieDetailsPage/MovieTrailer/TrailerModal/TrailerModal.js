@@ -5,17 +5,21 @@ import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import CloseIcon from '@material-ui/icons/Close';
 
-import PlayCircleFilledWhiteIcon from '@material-ui/icons/PlayCircleFilledWhite';
-
 const TrailerModal = ({ id, title, setShowModal }) => {
 	const classes = useStyles();
 
+	const handleClose = (e) => {
+		if (e.target.id === 'trailerModalOuter' || e.target.id === 'closeModalIcon') {
+			setShowModal({ show: false, id: '', name: '' });
+		}
+	};
+
 	return (
-		<Box className={classes.root}>
+		<Box id="trailerModalOuter" onClick={(e) => handleClose(e)} className={classes.root}>
 			<Box className={classes.content}>
 				<Box className={classes.title}>
 					<Typography variant="h6">{title}</Typography>
-					<CloseIcon className={classes.close } onClick={() => setShowModal({show: false, id: "", name: ""})}/>
+					<CloseIcon id="closeModalIcon" className={classes.close} />
 				</Box>
 				<Spiner />
 				<Box className={classes.video}>

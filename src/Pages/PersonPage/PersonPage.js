@@ -66,7 +66,7 @@ const PersonPage = () => {
 					<Grid container>
 						<Grid item xs={12} md={4} lg={3}>
 							<Box className={classes.leftColumn}>
-								<PersonPhoto path={profile_path} alt={name} />
+								<PersonPhoto path={profile_path} alt={name} gender={person.gender}/>
 								<Box className={classes.social}>
 									<SocialLinks details={person} />
 								</Box>

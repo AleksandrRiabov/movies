@@ -18,9 +18,19 @@ export const useStyles = makeStyles((theme) => ({
 		zIndex: "10",
 		position: "relative"
 	},
+	playCircle: {
+		width: "67px",
+		height: "67px",
+		borderRadius: "50%",
+		background: "rgba(0,0,0,0.7)",
+		display: "flex",
+		justifyContent: "center", 
+		alignItems: "center"
+	},
 	playIcon: {
-		fontSize: "67px",
+		color: "#fff",
+		fontSize: "35px",
 		cursor: "pointer",
-		opacity: "0.7"
+		opacity: "0.9"
 	}
 }));
