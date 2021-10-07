@@ -28,10 +28,12 @@ export const useStyles = makeStyles((theme) => ({
 	colorTransition: {
 		top: 0,
 		right: 0,
-		width: '60px',
+		width: '50px',
 		height: '100%',
 		zIndex: 10,
 		position: 'absolute',
-		background: 'linear-gradient(270deg, rgba(255,255,255,1) 45%, rgba(0,0,0,0) 89%)',
+		background: 'linear-gradient(270deg, rgba(255,255,255,1) 20%, rgba(0,0,0,0) 99%)',
+		transition: '0.5s ease-in ',
+		pointerEvents: 'none'
 	},
 }));
