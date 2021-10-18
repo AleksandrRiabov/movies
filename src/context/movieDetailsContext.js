@@ -46,8 +46,6 @@ const MovieDetailsProvider = ({ children }) => {
 		}
 	};
 
-	console.log(state);
-
 	const context = {
 		details: state.details,
 		credits: state.details.credits,

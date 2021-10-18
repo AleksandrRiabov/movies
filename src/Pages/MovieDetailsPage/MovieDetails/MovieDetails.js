@@ -57,7 +57,6 @@ const MovieDetails = () => {
 		? `https://image.tmdb.org/t/p/w500/${poster_path}`
 		: 'https://via.placeholder.com/300x450';
 
-	console.log('MovieDetails');
 	return (
 		<div
 			style={{
@@ -78,12 +77,7 @@ const MovieDetails = () => {
 					</Box>
 					<Box className={classes.headerDetails}>
 						<TitleSection
-							release_date={release_date}
-							genres={genres}
-							title={title}
-							vote_average={vote_average}
-							production_countries={production_countries}
-							runtime={runtime}
+							
 						/>
 						<Box className={classes.tagline}>
 							<Typography>{tagline}</Typography>

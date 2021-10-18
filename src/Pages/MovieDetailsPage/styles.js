@@ -6,7 +6,6 @@ export const useStyles = makeStyles((theme) => ({
 		background: '#fff',
 	},
 	leftColumn: {
-		width: 'calc(100vw - 80px - 268px)',
 		maxWidth: '900px',
 		position: 'relative',
 		paddingRight: '30px',

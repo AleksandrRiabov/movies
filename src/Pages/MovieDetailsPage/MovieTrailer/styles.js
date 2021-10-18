@@ -5,7 +5,7 @@ export const useStyles = makeStyles((theme) => ({
 		display: 'flex',
 		justifyContent: 'center',
 		alignItems: 'center',
-		marginBottom: '15px',
+		margin: '0 10px 15px 0',
 		position: 'relative',
 		minHeight: '200px',
 		zIndex: '1',

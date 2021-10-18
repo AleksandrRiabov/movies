@@ -1,35 +1,39 @@
 import { API_URL, API_KEY_3 } from './api/api';
 
+
+export const getMovies = async ({url}) => {
+	// const genresQuery = genres.length ? `${encodeURI('&with_genres=' + genres.join(','))}` : '';
+
+	// const url = `${API_URL}/discover/movie?api_key=${API_KEY_3}&sort_by=${filter}${genresQuery}&page=${page}`;
+	try {
+		const response = await fetch(url);
+		if (response.status !== 200) {
+			throw new Error('Something whent wrong, status code not 200');
+		} else {
+			const data = await response.json();
+			return data;
+		}
+	} catch (err) {
+		console.log(err);
+		return err
+	}
+};
+
 export const getMovieDetails = async (movieId, extra) => {
-	
 	const url = `${API_URL}/movie/${movieId}?api_key=${API_KEY_3}&append_to_response=${extra}`;
 	try {
 		const response = await fetch(url);
 		if (response.status !== 200) {
 			throw new Error('Something whent wrong, status code not 200');
-		}else{
+		} else {
 			const data = await response.json();
-		   return data;
+			return data;
 		}
 	} catch (err) {
 		console.log(err);
 	}
 };
 
-export const getMovieDetail = async ({ id, query = '' }) => {
-	const url = `${API_URL}/movie/${id}/${query}?api_key=${API_KEY_3}`;
-	try {
-		const response = await fetch(url);
-		if (response.status !== 200) {
-			throw new Error('Something whent wrong, status code not 200');
-		}else{
-			const data = await response.json();
-	    	return data;
-		}
-	} catch (err) {
-		console.log(err);
-	}
-};
 
 
 export const getPersonDetails = async ({ id }) => {

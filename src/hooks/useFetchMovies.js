@@ -1,8 +1,12 @@
 import { useState, useEffect } from 'react';
-import { getMovieDetails } from '../services';
+import { getMovies } from '../services';
 
-export const useFetchMainDetails = (id, extra) => {
-	const [data, setData] = useState([]);
+export const useFetchMovies = () => {
+	const [filter, setFilter] = useState('popularity.desc');
+	const [genres, setGenres] = useState([]);
+	const [page, setPage] = useState(1);
+
+	const [movies, setMovies] = useState([]);
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState({ isError: false, message: '' });
 
@@ -12,8 +16,8 @@ export const useFetchMainDetails = (id, extra) => {
 
 		const fetchData = async () => {
 			try {
-				const response = await getMovieDetails(id);
-				setData(response);
+				const response = await getMovies({ page, filter, genres });
+				setMovies(response);
 			} catch (err) {
 				setError({ isError: true, message: ' Something whent wrong. No Data Available..' });
 				console.log(err);
@@ -22,7 +26,7 @@ export const useFetchMainDetails = (id, extra) => {
 			}
 		};
 		fetchData();
-	}, [id]);
+	}, [page, filter, genres]);
 
-	return { data, loading, error };
+	return { movies, loading, setLoading, error, filter, setFilter, page, setPage, genres, setGenres };
 };

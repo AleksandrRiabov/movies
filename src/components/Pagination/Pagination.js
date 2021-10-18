@@ -1,25 +1,33 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Pagination from '@material-ui/lab/Pagination';
-import { useMoviesContext } from '../../context/moviesContext';
 
 const useStyles = makeStyles((theme) => ({
 	root: {
 		'& > * + *': {
 			marginTop: theme.spacing(2),
 		},
+		textAlign: 'center',
+		padding: '10px 0',
 	},
 	ul: {
+		justifyContent: 'center',
+		margin: '0',
 		'& .MuiPaginationItem-root': {
-			color: '#bfbfbf',
+			color: '#555',
+			margin: '0',
+			padding: '1px',
 		},
 	},
 }));
 
-export default function PaginationBar({ totalPages, page }) {
-	const { setPage } = useMoviesContext();
+export default function PaginationBar({ total_pages, page, setPage, setLoading }) {
 	const classes = useStyles();
+
 	const handleChange = (event, value) => {
+		if (value === page) {
+			return;
+		}
 		setPage(value);
 	};
 
@@ -27,7 +35,7 @@ export default function PaginationBar({ totalPages, page }) {
 		<div className={classes.root}>
 			<Pagination
 				classes={{ ul: classes.ul }}
-				count={totalPages}
+				count={total_pages}
 				page={page}
 				onChange={handleChange}
 			/>

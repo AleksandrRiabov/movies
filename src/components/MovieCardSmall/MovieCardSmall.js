@@ -14,6 +14,7 @@ const useStyles = makeStyles((theme) => ({
 		height: '141px',
 		borderRadius: '10px',
 		overflow: 'hidden',
+		background: "#000"
 	},
 	cardText: {
 		display: 'flex',
@@ -39,7 +40,7 @@ export default function MovieCardSmall({
 				<Box className={classes.cardImage}>
 					<img
 						src={img}
-						alt={title}
+						alt={""}
 					/>
 				</Box>
 				<Box className={classes.cardText}>

@@ -4,8 +4,7 @@ import Box from '@material-ui/core/Box';
 import Hidden from '@material-ui/core/Hidden';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
-import Genres from "./Genres/Genres"
-
+import Spiner from '../Spiner/Spiner';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -41,8 +40,25 @@ const useStyles = makeStyles((theme) => ({
 const Header = () => {
 	const classes = useStyles();
 
-		console.log("render header")
+	// const {loading, error} = props;
+	
+	// if (loading) {
+	// 	return (
+	// 		<Box style={{ position: 'relative', width: '100%', height: '200px' }}>
+	// 			<Spiner />
+	// 		</Box>
+	// 	);
+	// }
+
+	// if (error.isError) {
+	// 	return (
+	// 		<Box>
+	// 			<Typography variant="h6">{error.message}</Typography>
+	// 		</Box>
+	// 	);
+	// }
    
+	console.log("Header render")
 	return (
 		<Box className={classes.header}>
 			<div className={classes.shadow}></div>
@@ -60,7 +76,6 @@ const Header = () => {
 				</Grid>
 			</Hidden>
 			</Grid>	
-			<Genres />
 		</Box>
 	)
 }

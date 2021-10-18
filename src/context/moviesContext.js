@@ -8,7 +8,6 @@ const initialSatate = {
 	movies: { results: [] },
 	filter: 'popularity.desc',
 	selectedGenres: [],
-	query: '',
 	page: 1,
 	loading: true,
 	error: { isError: false, message: '' },
@@ -20,20 +19,12 @@ const AppProvider = ({ children }) => {
 	const genresQuery = state.selectedGenres.length
 		? `${encodeURI('&with_genres=' + state.selectedGenres.join(','))}`
 		: '';
+
 	const getMoviesUrl = `${API_URL}/discover/movie?api_key=${API_KEY_3}&sort_by=${state.filter}${genresQuery}&page=${state.page}`;
-	const searchMoviesUrl = `${API_URL}/search/movie?api_key=${API_KEY_3}&query=${state.query}&page=${state.page}`;
 
 	useEffect(() => {
-		let timerId;
-		if (state.query === '') {
-			getMovies(getMoviesUrl);
-		} else {
-			getMovies(searchMoviesUrl);
-		}
-		return () => {
-			clearTimeout(timerId);
-		};
-	}, [state.query, state.selectedGenres, state.filter, state.page]);
+		getMovies(getMoviesUrl);
+	}, [state.selectedGenres, state.filter, state.page]);
 
 	async function getMovies(url) {
 		setLoading(true);
@@ -54,13 +45,11 @@ const AppProvider = ({ children }) => {
 		}
 	}
 
-	const setQuery = (value) => {
-		dispatch({ type: 'SET QUERY', payload: value });
-	};
-
 	const selectGenre = (selectedGenreId) => {
-		setQuery('');
-		if (state.selectedGenres.includes(selectedGenreId)) {
+		setPage(1);
+		if (selectedGenreId === 'reset') {
+			dispatch({ type: 'RESET GENRES' });
+		} else if (state.selectedGenres.includes(selectedGenreId)) {
 			const updatedGenres = state.selectedGenres.filter((gener) => gener !== selectedGenreId);
 			dispatch({ type: 'SELECT GENRE', payload: updatedGenres });
 		} else {
@@ -69,11 +58,8 @@ const AppProvider = ({ children }) => {
 		}
 	};
 
-	const resetGenres = () => {
-		dispatch({ type: 'RESET GENRES' });
-	};
-
 	const setFilter = (filter) => {
+		setPage(1);
 		dispatch({ type: 'SET FILTER', payload: filter });
 	};
 
@@ -90,19 +76,10 @@ const AppProvider = ({ children }) => {
 	};
 
 	const context = {
-		movies: state.movies,
-		getMovies,
-		genres: state.genres,
+		...state,
 		selectGenre,
-		setQuery,
-		query: state.query,
-		selectedGenres: state.selectedGenres,
 		setFilter,
-		filter: state.filter,
-		resetGenres,
 		setPage,
-		loading: state.loading,
-		error: state.error,
 	};
 
 	return <MoviesContext.Provider value={context}>{children}</MoviesContext.Provider>;

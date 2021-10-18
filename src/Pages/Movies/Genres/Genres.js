@@ -1,7 +1,6 @@
 import React from "react";
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
-import Container from '@material-ui/core/Container';
 import Box from '@material-ui/core/Box';
 import CancelOutlinedIcon from '@material-ui/icons/CancelOutlined';
 
@@ -16,11 +15,16 @@ const useStyles = makeStyles((theme) => ({
 		display: "flex",
 		flexWrap: "wrap",
 		color: "#fff",
-		padding: "10px 0 20px"
+		padding: "10px 0px",
+	
 	},
 	genre: {
 		margin: theme.spacing(0.3),
-		color: "grey"
+		color: "grey",
+		textTransform: "capitalize",
+		fontSize: "12px",
+		padding: "4px 12px",
+		
 	},
 	slectedGenre: {
 		color: "#d29e3e"
@@ -38,10 +42,11 @@ const useStyles = makeStyles((theme) => ({
 
 
 const Genres = () => {
-	const { selectedGenres, selectGenre, resetGenres } = useMoviesContext();
+
+	const { selectedGenres, selectGenre } = useMoviesContext();
 	const classes = useStyles();
 	return (
-	  <Container>
+	
 				<Box className={classes.genresWrapper}>
 				  {GENRES.map(genre => {
                    return  <Button 
@@ -55,12 +60,12 @@ const Genres = () => {
 				   </Button>	   
 				})}
 					{selectedGenres.length > 1
-						? <Box onClick={() => resetGenres()}
+						? <Box onClick={() => selectGenre("reset")}
 							  className={classes.resetBtn}>
 							Remove All <CancelOutlinedIcon />
 						</Box> : ""}
 				  </Box>
-	  </Container>
+	
 	)
 }
 

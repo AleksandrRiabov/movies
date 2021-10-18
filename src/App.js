@@ -9,6 +9,7 @@ import MovieDetailsPage from './Pages/MovieDetailsPage/MovieDetailsPage';
 import PersonPage from './Pages/PersonPage/PersonPage';
 import ReviewsPage from './Pages/ReviewsPage/ReviewsPage';
 import CreditsPage from './Pages/CreditsPage/CreditsPage';
+import SearchResultsPage from './Pages/SearchResultsPage/SearchResultsPage';
 import Footer from './components/Footer/Footer';
 
 class App extends Component {
@@ -21,7 +22,9 @@ class App extends Component {
 						<Route path="/" exact>
 							<Movies />
 						</Route>
-
+						<Route path="/:search" exact>
+							<SearchResultsPage />
+						</Route>
 						<Route path="/movie/:id" exact>
 							<MovieDetailsProvider>
 								<MovieDetailsPage />
