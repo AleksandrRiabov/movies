@@ -8,12 +8,18 @@ export const useStyles = makeStyles((theme) => ({
 	},
 	movie: {
 		display: 'flex',
-		flexWrap: 'wrap',
 		padding: '3px 10px',
 	},
-	bold: {
+	titleWrapper: {
+		width: '100%',
+	},
+	title: {
 		fontWeight: '700',
 		marginRight: '10px',
+		display: 'inline',
+	},
+	character: {
+		display: 'inline',
 	},
 	date: {
 		width: '60px',

@@ -8,7 +8,7 @@ export const useStyles = makeStyles((theme) => ({
 	leftColumn: {
 		maxWidth: '900px',
 		position: 'relative',
-		paddingRight: '30px',
+		
 	},
 	witeSectionWrapper: {
 		display: 'flex',

@@ -3,7 +3,7 @@ import { useMovieDetailsContext } from '../../../../context/movieDetailsContext'
 import Spiner from '../../../../components/Spiner/Spiner';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
-import { useStyles } from '../styles';
+import { useStyles } from './styles';
 
 const WatchProviders = () => {
 	const classes = useStyles();
@@ -46,17 +46,19 @@ const WatchProviders = () => {
 			{providers.buy && (
 				<Box className={classes.providersBox}>
 					<Typography className={classes.providersTitle}>Buy :</Typography>
-					{providers.buy.map((provider) => {
-						return (
-							<Box key={provider.logo_path} className={classes.providerLogo}>
-								<img
-									width="100%"
-									src={`https://image.tmdb.org/t/p/w200/${provider.logo_path}`}
-									alt={provider.name}
-								/>
-							</Box>
-						);
-					})}
+					<Box className={classes.logosWrapper}>
+						{providers.buy.map((provider) => {
+							return (
+								<Box key={provider.logo_path} className={classes.providerLogo}>
+									<img
+										width="100%"
+										src={`https://image.tmdb.org/t/p/w200/${provider.logo_path}`}
+										alt={provider.name}
+									/>
+								</Box>
+							);
+						})}
+					</Box>
 				</Box>
 			)}
 		</Box>

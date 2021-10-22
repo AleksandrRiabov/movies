@@ -3,7 +3,7 @@ import { useStyles } from './styles';
 import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
-import MovieDetails from './MovieDetails/MovieDetails';
+import MovieDetailsHeader from './MovieDetailsHeader/MovieDetailsHeader';
 import Cast from './Cast/Cast';
 import StatisticsBar from './StatisticsBar/StatisticsBar';
 import RecomendetMovies from './RecomendetMovies/RecomendetMovies';
@@ -15,7 +15,7 @@ const MovieDetailsPage = () => {
 
 	return (
 		<Box>
-			<MovieDetails />
+			<MovieDetailsHeader />
 			<Box className={classes.whiteSection}>
 				<Container className={classes.witeSectionWrapper}>
 					<Grid container spaces={3}>

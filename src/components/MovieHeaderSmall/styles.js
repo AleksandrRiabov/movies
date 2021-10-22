@@ -7,7 +7,10 @@ export const useStyles = makeStyles((theme) => ({
 	},
 	content: {
 		display: 'flex',
-		padding: '15px 40px',
+		padding: '15px 0',
+		[theme.breakpoints.up('sm')]: {
+			padding: '15px 40px',
+		},
 	},
 	imageWrapper: {
 		width: '58px',
@@ -20,7 +23,7 @@ export const useStyles = makeStyles((theme) => ({
 		paddingRight: '3px',
 	},
 	links: {
-		paddingLeft: '40px',
+		paddingLeft: '20px',
 		display: 'flex',
 		flexDirection: 'column',
 		justifyContent: 'center',
@@ -30,9 +33,18 @@ export const useStyles = makeStyles((theme) => ({
 		color: '#fff',
 		fontWeight: '600',
 		marginRight: '5px',
+		[theme.breakpoints.down('sm')]: {
+			fontSize: '1.5rem',
+		},
 	},
-	text: {
+	year: {
 		display: 'inline-block',
+		color: '#ffffffad',
+		[theme.breakpoints.down('sm')]: {
+			fontSize: '1.5rem',
+		},
+	},
+	goBack: {
 		color: '#ffffffad',
 	},
 	flexWrapper: {

@@ -28,13 +28,13 @@ const StatisticsBar = () => {
 		return null;
 	}
 	const { budget, revenue, status } = details;
-	console.log('Statistic bar');
+
 	return (
 		<Box className={classes.root}>
 			<Box>
 				<Box>
 					<Box>
-						<SocialLinks details={details}/>
+						<SocialLinks details={details} />
 					</Box>
 					<Box className={classes.fact}>
 						<Typography variant="h6"> Status </Typography>
@@ -65,7 +65,7 @@ export default StatisticsBar;
 
 function commafy(num, prec, currSign) {
 	if (prec == null) prec = 2;
-	var str = parseFloat(num).toFixed(prec).toString().split('.');
+	let str = parseFloat(num).toFixed(prec).toString().split('.');
 	if (str[0].length >= 5) {
 		str[0] = str[0].replace(/(\d)(?=(\d{3})+$)/g, '$1,');
 	}

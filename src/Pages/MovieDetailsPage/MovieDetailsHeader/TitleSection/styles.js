@@ -37,6 +37,12 @@ export const useStyles = makeStyles((theme) => ({
 		display: 'flex',
 		flexWrap: 'wrap',
 	},
+	titleSize: {
+		[theme.breakpoints.down('sm')]: {
+			fontSize: "2rem",
+			paddingTop: "10px"
+		},
+	}, 
 	facts: {
 		width: '100%',
 	},
@@ -59,20 +65,5 @@ export const useStyles = makeStyles((theme) => ({
 		width: '33%',
 		marginBottom: '15px',
 	},
-	providersBox: {
-		width: '100%',
-		display: 'flex',
-		paddingBottom: '15px',
-	},
-	providerLogo: {
-		width: '45px',
-		marginLeft: '15px',
-		borderRadius: '10px',
-		overflow: 'hidden',
-		height: '45px',
-	},
-	providersTitle: {
-		dispaly: 'block',
-		width: '85px',
-	},
+	
 }));

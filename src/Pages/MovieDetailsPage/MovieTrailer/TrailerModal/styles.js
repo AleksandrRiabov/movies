@@ -23,7 +23,9 @@ export const useStyles = makeStyles((theme) => ({
 		padding: '20px 10px',
 		display: 'flex',
 		justifyContent: 'space-between',
-		width: '540px',
+		[theme.breakpoints.up('sm')]: {
+			width: '540px',
+		},
 	},
 	video: {
 		position: 'relative',

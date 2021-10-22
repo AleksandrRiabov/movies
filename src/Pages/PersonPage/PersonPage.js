@@ -4,6 +4,8 @@ import { getPersonDetails } from '../../services';
 import Container from '@material-ui/core/Container';
 import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
+import Typography from '@material-ui/core/Typography';
+import Hidden from '@material-ui/core/Hidden';
 import { useStyles } from './styles';
 import Spiner from '../../components/Spiner/Spiner';
 import SocialLinks from '../../components/SocialLinks/SocialLinks';
@@ -66,7 +68,16 @@ const PersonPage = () => {
 					<Grid container>
 						<Grid item xs={12} md={4} lg={3}>
 							<Box className={classes.leftColumn}>
-								<PersonPhoto path={profile_path} alt={name} gender={person.gender}/>
+								<PersonPhoto
+									path={profile_path}
+									alt={name}
+									gender={person.gender}
+								/>
+								<Hidden only={['md', 'lg', 'xl']}>
+									<Typography variant={'h4'} className={classes.titleMobile}>
+										{person.name}
+									</Typography>
+								</Hidden>
 								<Box className={classes.social}>
 									<SocialLinks details={person} />
 								</Box>

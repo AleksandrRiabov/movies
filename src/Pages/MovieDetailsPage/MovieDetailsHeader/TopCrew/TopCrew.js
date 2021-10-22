@@ -4,10 +4,9 @@ import Spiner from '../../../../components/Spiner/Spiner';
 
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
-import { useStyles } from '../styles';
+import { useStyles } from './styles';
 
 const TopCrew = () => {
-	
 	const { credits, loading, error } = useMovieDetailsContext();
 	const classes = useStyles();
 
@@ -26,7 +25,6 @@ const TopCrew = () => {
 	const JOB_TITLES = ['Director', 'Writer', 'Story', 'Creator'];
 	const crew = credits.crew.filter(({ job }) => JOB_TITLES.includes(job));
 
-	console.log('topcrew');
 	return (
 		<Box className={classes.creatorsBox}>
 			{crew.map((member, index) => {

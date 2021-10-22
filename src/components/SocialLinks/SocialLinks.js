@@ -4,31 +4,10 @@ import FacebookIcon from '@material-ui/icons/Facebook';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import LinkIcon from '@material-ui/icons/Link';
-import { makeStyles } from '@material-ui/core/styles';
+import { useStyles } from './styles';
 
-
-const useStyles = makeStyles((theme) => ({
-	root: {
-		position: 'relative',
-	},
-	iconsWrapper: {
-		width: '100%',
-		display: 'flex',
-		marginLeft: '-10px',
-	},
-	link: {
-		color: '#000',
-		'&:hover': {
-			color: 'grey',
-		},
-		padding: '0 10px',
-	},
-}));
-
-const SocialLinks = ({details: { external_ids, homepage } }) => {
+const SocialLinks = ({ details: { external_ids, homepage } }) => {
 	const classes = useStyles();
-	
-	console.log('social links');
 
 	return (
 		<Box className={classes.iconsWrapper}>

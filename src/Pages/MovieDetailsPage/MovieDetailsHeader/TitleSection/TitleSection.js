@@ -2,7 +2,7 @@ import React from 'react';
 import { useMovieDetailsContext } from '../../../../context/movieDetailsContext';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
-import { useStyles } from '../styles';
+import { useStyles } from './styles';
 import MovieRating from '../../../../components/MovieRating/MovieRating';
 import Spiner from '../../../../components/Spiner/Spiner';
 
@@ -25,7 +25,7 @@ const TityleSection = () => {
 
 	return (
 		<Box className={classes.title}>
-			<Typography variant="h2">{title}</Typography>
+			<Typography variant="h3" className={classes.titleSize}>{title}</Typography>
 			<Box className={classes.facts}>
 				<span>{release_date}</span>
 				<span>{countries && ` (${countries}) -`}</span>

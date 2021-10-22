@@ -1,15 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Avatar from '../Avatar/Avatar';
-
 import Box from '@material-ui/core/Box';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import { useStyles } from './styles';
 import StarIcon from '@material-ui/icons/Star';
+import Text from '../../components/Text/Text';
 
 const ReviewCard = ({ review }) => {
 	const classes = useStyles();
-	const [showMore, setShowMore] = useState(false);
 
 	if (!review) {
 		return null;
@@ -23,13 +22,15 @@ const ReviewCard = ({ review }) => {
 
 	return (
 		<Paper className={classes.content}>
-			<Box className={classes.groupped}>
+			<Box className={classes.grouped}>
 				<Box className={classes.avatar}>
 					<Avatar author={name || username} img={avatar_path} />
 				</Box>
 				<Box>
 					<Box className={classes.flexWrapper}>
-						<Typography variant="h6">A review bay {name || username} </Typography>
+						<Typography variant="h6" className={classes.name}>
+							A review bay {name || username}{' '}
+						</Typography>
 						{rating && (
 							<Box className={classes.rating}>
 								<StarIcon className={classes.star} />
@@ -38,34 +39,14 @@ const ReviewCard = ({ review }) => {
 						)}
 					</Box>
 					<Box>
-						<Typography variant="body2">
+						<Typography variant="body2" className={classes.writtenBy}>
 							Written by {name || username} on {updated_at.slice(0, 10)}
 						</Typography>
 					</Box>
 				</Box>
 			</Box>
 			<Box className={classes.teaser}>
-				{content.length > 600 && !showMore ? (
-					<p>
-						{content.slice(0, 600)}...{' '}
-						<span
-							style={{ textDecoration: 'underline', cursor: 'pointer' }}
-							onClick={() => setShowMore(!showMore)}
-						>
-							{showMore ? '' : 'Show more.'}
-						</span>
-					</p>
-				) : (
-					<p>
-						{content}{' '}
-						<span
-							style={{ textDecoration: 'underline', cursor: 'pointer' }}
-							onClick={() => setShowMore(!showMore)}
-						>
-							{showMore ? 'Show less.' : ''}
-						</span>
-					</p>
-				)}
+				<Text size={600}>{content}</Text>
 			</Box>
 		</Paper>
 	);

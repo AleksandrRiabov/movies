@@ -30,7 +30,7 @@ const MovieHeaderSmall = ({ movie: { title, poster_path, id, release_date } }) =
 								{release_date && (
 									<Typography
 										variant="h4"
-										className={classes.text}
+										className={classes.year}
 									>{`(${release_date.slice(0, 4)})`}</Typography>
 								)}
 							</Link>
@@ -38,7 +38,7 @@ const MovieHeaderSmall = ({ movie: { title, poster_path, id, release_date } }) =
 						<Box>
 							<Link to={`/movie/${id}`} className={classes.flexWrapper}>
 								<ArrowBackIcon className={classes.arrow} />
-								<Typography className={classes.text}>Back to Main</Typography>
+								<Typography className={classes.goBack}>Back to Main</Typography>
 							</Link>
 						</Box>
 					</Box>

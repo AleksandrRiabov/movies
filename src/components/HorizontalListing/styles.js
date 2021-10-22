@@ -9,7 +9,7 @@ export const useStyles = makeStyles((theme) => ({
 		display: 'flex',
 		overflow: 'hidden',
 		overflowX: 'scroll',
-		marginBottom: '30px',
+		marginBottom: '10px',
 		'&::-webkit-scrollbar': {
 			height: '8px',
 		},
@@ -32,8 +32,8 @@ export const useStyles = makeStyles((theme) => ({
 		height: '100%',
 		zIndex: 10,
 		position: 'absolute',
-		background: 'linear-gradient(270deg, rgba(255,255,255,1) 20%, rgba(0,0,0,0) 99%)',
+		background: 'linear-gradient(270deg, rgba(255,255,255,1) 15%, rgba(255,255,255,0) 59%)',
 		transition: '0.5s ease-in ',
-		pointerEvents: 'none'
+		pointerEvents: 'none',
 	},
 }));

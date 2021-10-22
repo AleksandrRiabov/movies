@@ -40,7 +40,7 @@ const Cast = () => {
 	}
 
 	const actors = credits.cast.slice(0, 9);
-	console.log('Actors');
+
 	return (
 		<>
 			<HorizontalListing title="Top Billed Cast">

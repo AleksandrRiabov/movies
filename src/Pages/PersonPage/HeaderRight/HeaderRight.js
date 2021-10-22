@@ -2,12 +2,17 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
+import Hidden from '@material-ui/core/Hidden';
+import Text from '../../../components/Text/Text';
 import HorizontalListing from '../../../components/HorizontalListing/HorizontalListing';
 import MovieCardSmall from '../../../components/MovieCardSmall/MovieCardSmall';
 
 const useStyles = makeStyles((theme) => ({
 	biography: {
 		paddingTop: '30px',
+	},
+	bold: {
+		fontWeight: '600',
 	},
 }));
 
@@ -17,14 +22,14 @@ const HeaderRight = ({ name, biography, movie_credits }) => {
 	return (
 		<>
 			<Box>
-				<Typography variant="h4">{name}</Typography>
+				<Hidden only={['xs', 'sm']}>
+					<Typography variant="h4">{name}</Typography>
+				</Hidden>
 				<Box className={classes.biography}>
-					<Typography variant="h6" gutterBottom>
+					<Typography variant="h6" className={classes.bold} gutterBottom>
 						Biography
 					</Typography>
-					<Typography variant="body1">
-						{biography || `We don't have a biography for ${name}.`}
-					</Typography>
+					<Text>{biography || `We don't have a biography for ${name}.`}</Text>
 				</Box>
 			</Box>
 			<Box className={classes.movies}>

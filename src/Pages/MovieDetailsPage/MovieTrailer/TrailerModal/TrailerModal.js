@@ -1,5 +1,6 @@
 import React from 'react';
 import { useStyles } from './styles';
+import { useMediaQuery, useTheme } from '@material-ui/core';
 import Spiner from '../../../../components/Spiner/Spiner';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
@@ -7,6 +8,8 @@ import CloseIcon from '@material-ui/icons/Close';
 
 const TrailerModal = ({ id, title, setShowModal }) => {
 	const classes = useStyles();
+	const theme = useTheme();
+	const isSmallScreen = useMediaQuery(theme.breakpoints.down('xs'));
 
 	const handleClose = (e) => {
 		if (e.target.id === 'trailerModalOuter' || e.target.id === 'closeModalIcon') {
@@ -24,8 +27,8 @@ const TrailerModal = ({ id, title, setShowModal }) => {
 				<Spiner />
 				<Box className={classes.video}>
 					<iframe
-						width="560"
-						height="315"
+						width={isSmallScreen ? '288' : '560'}
+						height={isSmallScreen ? '162' : '315'}
 						src={`https://www.youtube.com/embed/${id}`}
 						title="YouTube video player"
 						frameBorder="0"

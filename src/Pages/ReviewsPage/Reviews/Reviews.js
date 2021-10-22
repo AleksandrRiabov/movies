@@ -12,19 +12,18 @@ const Reviews = ({ reviews, title }) => {
 
 	const totalReviews = reviews.length;
 
-	console.log(reviews);
 	return (
 		<Container>
 			<Box className={classes.root}>
 				<Grid container spacing={3}>
-					<Grid item xs={3}>
+					<Grid item xs={12} sm={3}>
 						<Box className={classes.title}>
 							<Typography variant="h6">
 								Total ({totalReviews}) {totalReviews > 1 ? 'Reviews' : 'Review'}
 							</Typography>
 						</Box>
 					</Grid>
-					<Grid item xs={9}>
+					<Grid item xs={12} sm={9}>
 						{totalReviews ? (
 							<Box>
 								{reviews.map((review) => (

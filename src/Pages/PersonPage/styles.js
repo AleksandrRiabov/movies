@@ -3,20 +3,22 @@ import { makeStyles } from '@material-ui/core/styles';
 export const useStyles = makeStyles((theme) => ({
 	root: {
 		background: '#fff',
-		minHeight: "100vh"
+		minHeight: '100vh',
 	},
 	container: {
-		padding: '30px 40px',
+		padding: '30px 10px',
 	},
 	content: {
 		display: 'flex',
 		overflow: 'hidden',
 		width: '100%',
 	},
-	rightColumn: {
-		paddingLeft: '30px',
-	},
 	social: {
-		marginTop: '30px',
+		marginTop: '15px',
+		width: '150px',
+		margin: '0 auto',
 	},
+	titleMobile: {
+		textAlign: "center"
+	}
 }));

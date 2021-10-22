@@ -38,7 +38,6 @@ const RecomendetMovies = () => {
 		);
 	}
 
-	console.log('recomendet');
 	return (
 		<HorizontalListing title="Recommendations">
 			{recommendations && recommendations.results.length ? (
@@ -52,4 +51,4 @@ const RecomendetMovies = () => {
 	);
 };
 
-export default React.memo(RecomendetMovies);
+export default RecomendetMovies;

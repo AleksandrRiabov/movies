@@ -11,16 +11,16 @@ const ActingList = ({ cast }) => {
 
 	const sortedByDate = sliceAndSort(cast);
 
-	let relizeDate;
+	let releaseDate;
 
 	const movies = sortedByDate.map((movie, indx) => {
 		const { release_date, title, character, id } = movie;
-		const sameYear = relizeDate === release_date ? true : false;
+		const isSameYear = releaseDate === release_date;
 
-		relizeDate = release_date;
+		releaseDate = release_date;
 		return (
 			<Box key={movie.id}>
-				{!sameYear && indx !== 0 && <Box className={classes.horizontalLine}></Box>}
+				{!isSameYear && indx !== 0 && <Box className={classes.horizontalLine}></Box>}
 				<Box className={classes.movie}>
 					<Box className={classes.date}>
 						<Typography variant="subtitle1" className={classes.bold}>
@@ -31,12 +31,16 @@ const ActingList = ({ cast }) => {
 							)}
 						</Typography>
 					</Box>
-					<Link to={`/movie/${id}`}>
-						<Typography variant="subtitle1" className={classes.bold}>
-							{title}
+					<Box className={classes.titleWrapper}>
+						<Link to={`/movie/${id}`}>
+							<Typography variant="subtitle1" className={classes.title}>
+								{title}
+							</Typography>
+						</Link>
+						<Typography variant="subtitle1" className={classes.character}>
+							{character && `as ${character}`}
 						</Typography>
-					</Link>
-					<Typography variant="subtitle1">{character && `as ${character}`}</Typography>
+					</Box>
 				</Box>
 			</Box>
 		);
@@ -60,7 +64,7 @@ function sliceAndSort(cast) {
 		if (release_date) {
 			return { ...movie, release_date: release_date.slice(0, 4) };
 		} else {
-			return { ...movie, release_date: '9999' };
+			return { ...movie, release_date: '9999' }; // Needs to sort correctly
 		}
 	});
 

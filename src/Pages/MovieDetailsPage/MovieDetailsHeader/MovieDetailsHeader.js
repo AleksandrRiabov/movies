@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useMovieDetailsContext } from '../../../context/movieDetailsContext';
 import { useParams } from 'react-router-dom';
+import { useMediaQuery, useTheme } from '@material-ui/core';
 import Container from '@material-ui/core/Container';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
@@ -9,10 +10,14 @@ import TitleSection from './TitleSection/TitleSection';
 import Spiner from '../../../components/Spiner/Spiner';
 import WatchProviders from './WatchProviders/WatchProviders';
 import TopCrew from './TopCrew/TopCrew';
+import MobileHeader from './MobileHeader/MobileHeader';
 
-const MovieDetails = () => {
+const MovieDetailsHeader = () => {
 	const classes = useStyles();
 	const { id } = useParams();
+	const theme = useTheme();
+	const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
+
 	const { getDetails, details, loading, error } = useMovieDetailsContext();
 
 	useEffect(() => {
@@ -37,18 +42,7 @@ const MovieDetails = () => {
 		return <Box className={classes.darkBg}>{error.message}</Box>;
 	}
 
-	const {
-		backdrop_path,
-		poster_path,
-		title,
-		vote_average,
-		release_date,
-		genres,
-		tagline,
-		overview,
-		production_countries,
-		runtime,
-	} = details;
+	const { backdrop_path, poster_path, tagline, overview } = details;
 
 	const backgroundImage = `url(https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces/${
 		backdrop_path || poster_path
@@ -56,6 +50,10 @@ const MovieDetails = () => {
 	const poster = poster_path
 		? `https://image.tmdb.org/t/p/w500/${poster_path}`
 		: 'https://via.placeholder.com/300x450';
+
+	if (isSmallScreen) {
+		return <MobileHeader details={details} loading={loading} error={error} />;
+	}
 
 	return (
 		<div
@@ -76,9 +74,7 @@ const MovieDetails = () => {
 						</Box>
 					</Box>
 					<Box className={classes.headerDetails}>
-						<TitleSection
-							
-						/>
+						<TitleSection />
 						<Box className={classes.tagline}>
 							<Typography>{tagline}</Typography>
 						</Box>
@@ -97,4 +93,4 @@ const MovieDetails = () => {
 	);
 };
 
-export default MovieDetails;
+export default MovieDetailsHeader;
