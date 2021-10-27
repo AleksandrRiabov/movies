@@ -1,26 +1,17 @@
 import React from 'react';
-import Header from '../../components/Header/Header';
+import Header from './Header/Header';
 import MoviesSection from './MoviesSection/MoviesSection';
-import Aside from '../../components/Aside/Aside';
-import Grid from '@material-ui/core/Grid';
-import Hidden from '@material-ui/core/Hidden';
+import Box from '@material-ui/core/Box';
 import Container from '@material-ui/core/Container';
 
 const Movies = () => {
 	return (
-		<Container>
+		<Box>
 			<Header />
-			<Grid container spacing={3}>
-				<Hidden only={['xs', 'sm']}>
-					<Grid item md={3}>
-						<Aside />
-					</Grid>
-				</Hidden>
-				<Grid item xs={12} md={9}>
-					<MoviesSection />
-				</Grid>
-			</Grid>
-		</Container>
+			<Container>
+				<MoviesSection />
+			</Container>
+		</Box>
 	);
 };
 

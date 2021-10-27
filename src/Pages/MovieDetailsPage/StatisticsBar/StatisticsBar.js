@@ -1,6 +1,5 @@
 import React from 'react';
 import { useMovieDetailsContext } from '../../../context/movieDetailsContext';
-import Spiner from '../../../components/Spiner/Spiner';
 
 import { useStyles } from './styles';
 import Box from '@material-ui/core/Box';
@@ -13,11 +12,7 @@ const StatisticsBar = () => {
 	const { details, loading, error } = useMovieDetailsContext();
 
 	if (loading) {
-		return (
-			<Box className={classes.loadingWrapper}>
-				<Spiner color="#5f5f5f" />{' '}
-			</Box>
-		);
+		return null;
 	}
 
 	if (error.isError) {

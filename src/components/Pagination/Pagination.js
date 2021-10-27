@@ -29,6 +29,7 @@ export default function PaginationBar({ total_pages, page, setPage, setLoading }
 			return;
 		}
 		setPage(value);
+		window.scroll(0,400)
 	};
 
 	return (

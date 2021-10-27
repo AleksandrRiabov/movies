@@ -19,6 +19,6 @@ export const useStyles = makeStyles((theme) => ({
 		margin: '0 auto',
 	},
 	titleMobile: {
-		textAlign: "center"
-	}
+		textAlign: 'center',
+	},
 }));

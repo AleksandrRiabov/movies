@@ -11,14 +11,17 @@ const TrailerModal = ({ id, title, setShowModal }) => {
 	const theme = useTheme();
 	const isSmallScreen = useMediaQuery(theme.breakpoints.down('xs'));
 
+	const width = window.screen.width - 40;
+	const height = (width / 100) * 56.25;
+
 	const handleClose = (e) => {
-		if (e.target.id === 'trailerModalOuter' || e.target.id === 'closeModalIcon') {
+		if (e.target.id === 'trailerModalOuter' || e.target.closest('#closeModalIcon')) {
 			setShowModal({ show: false, id: '', name: '' });
 		}
 	};
 
 	return (
-		<Box id="trailerModalOuter" onClick={(e) => handleClose(e)} className={classes.root}>
+		<Box  id="trailerModalOuter" onClick={(e) => handleClose(e)} className={classes.root}>
 			<Box className={classes.content}>
 				<Box className={classes.title}>
 					<Typography variant="h6">{title}</Typography>
@@ -27,8 +30,8 @@ const TrailerModal = ({ id, title, setShowModal }) => {
 				<Spiner />
 				<Box className={classes.video}>
 					<iframe
-						width={isSmallScreen ? '288' : '560'}
-						height={isSmallScreen ? '162' : '315'}
+						width={isSmallScreen ? `${width}px` : '560'}
+						height={isSmallScreen ? `${height}px` : '315'}
 						src={`https://www.youtube.com/embed/${id}`}
 						title="YouTube video player"
 						frameBorder="0"

@@ -8,10 +8,9 @@ export const useStyles = makeStyles((theme) => ({
 	},
 	footerInner: {
 		width: '100%',
-		height: '350px',
+		height: '80px',
 		display: 'flex',
 		justifyContent: 'center',
-		alignItems: 'flex-end',
-		marginBottom: '15px',
+		alignItems: 'center',
 	},
 }));

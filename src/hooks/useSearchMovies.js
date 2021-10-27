@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { getMovies } from '../services';
 import { API_URL, API_KEY_3 } from '../api/api';
 
-export const useSearchMovies = (query) => {
+export const useSearchMovies = (query = '') => {
 	const [page, setPage] = useState(1);
 	const [movies, setMovies] = useState({ results: [] });
 	const [loading, setLoading] = useState(true);

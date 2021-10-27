@@ -7,8 +7,15 @@ export const useStyles = makeStyles((theme) => ({
 		display: 'flex',
 		justifyContent: 'center',
 		flexWrap: 'wrap',
-		minHeight: '570px',
-		position: "relative"
+		minHeight: '500px',
+		position: 'relative',
+	},
+	loading: {
+		display: 'flex',
+		justifyContent: 'center',
+		flexWrap: 'wrap',
+		minHeight: '100vh',
+		position: 'relative',
 	},
 	headerInner: {
 		width: '100%',
@@ -59,5 +66,4 @@ export const useStyles = makeStyles((theme) => ({
 		width: '33%',
 		marginBottom: '15px',
 	},
-	
 }));

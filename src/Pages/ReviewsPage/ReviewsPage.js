@@ -34,7 +34,7 @@ const ReviewsPage = () => {
 	if (error.isError) {
 		return <Box>{error.message}</Box>;
 	}
-	console.log(data);
+
 	return (
 		<Box className={classes.reviewsPage}>
 			<MovieHeaderSmall movie={data} />

@@ -28,6 +28,8 @@ export const useStyles = makeStyles((theme) => ({
 		},
 	},
 	video: {
+		display: "flex", 
+		justifyContent: "center",
 		position: 'relative',
 		zIndex: '101',
 	},

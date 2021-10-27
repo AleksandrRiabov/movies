@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useStyles } from './styles';
 import { useMovieDetailsContext } from '../../../context/movieDetailsContext';
-import Spiner from '../../../components/Spiner/Spiner';
 import HorizontalListing from '../../../components/HorizontalListing/HorizontalListing';
 import TrailerPreview from './TrailerPreview/TrailerPreview';
 import TrailerModal from './TrailerModal/TrailerModal';
@@ -18,11 +17,7 @@ const MovieTrailer = () => {
 	} = useMovieDetailsContext();
 
 	if (loading) {
-		return (
-			<Box className={classes.root}>
-				<Spiner color="#5f5f5f" />
-			</Box>
-		);
+		return null;
 	}
 
 	if (error.isError) {

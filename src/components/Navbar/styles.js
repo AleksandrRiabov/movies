@@ -1,16 +1,18 @@
 import { alpha, makeStyles } from '@material-ui/core/styles';
 
 export const useStyles = makeStyles((theme) => ({
-	grow: {
-		flexGrow: 1,
-	},
 	bg: {
 		background: '#1b2439',
+	},
+	container: {
+		[theme.breakpoints.down('xs')]: {
+			padding: '0 !important',
+		},
 	},
 	menuButton: {
 		marginRight: theme.spacing(2),
 	},
-	title: {
+	logo: {
 		display: 'none',
 		[theme.breakpoints.up('sm')]: {
 			display: 'block',
@@ -60,13 +62,20 @@ export const useStyles = makeStyles((theme) => ({
 			display: 'flex',
 		},
 	},
-	sectionMobile: {
-		display: 'flex',
-		[theme.breakpoints.up('md')]: {
-			display: 'none',
-		},
-	},
+
 	marginRight: {
 		marginRight: '10px',
+	},
+	circle: {
+		display: 'none',
+		[theme.breakpoints.down('xs')]: {
+			display: 'flex',
+			justifyContent: 'center',
+			alignItems: 'center',
+			borderRadius: '50%',
+			border: '2px solid #bd0a57',
+			padding: '0 6px',
+			marginRight: '10px',
+		},
 	},
 }));

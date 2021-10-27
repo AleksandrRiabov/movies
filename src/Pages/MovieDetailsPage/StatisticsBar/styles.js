@@ -8,9 +8,4 @@ export const useStyles = makeStyles((theme) => ({
 	fact: {
 		margin: "30px 0"
 	},
-	loadingWrapper: {
-		 position: "relative",
-		width: "260px",
-		height: "300px"
-	}
 }));

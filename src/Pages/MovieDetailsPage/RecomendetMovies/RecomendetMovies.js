@@ -3,7 +3,6 @@ import { useMovieDetailsContext } from '../../../context/movieDetailsContext';
 import { makeStyles } from '@material-ui/core/styles';
 import Box from '@material-ui/core/Box';
 import HorizontalListing from '../../../components/HorizontalListing/HorizontalListing';
-import Spiner from '../../../components/Spiner/Spiner';
 import MovieCardSmall from '../../../components/MovieCardSmall/MovieCardSmall';
 
 const useStyles = makeStyles((theme) => ({
@@ -23,11 +22,7 @@ const RecomendetMovies = () => {
 	} = useMovieDetailsContext();
 
 	if (loading) {
-		return (
-			<Box className={classes.root}>
-				<Spiner color="#5f5f5f" />
-			</Box>
-		);
+		return null;
 	}
 
 	if (error.isError) {

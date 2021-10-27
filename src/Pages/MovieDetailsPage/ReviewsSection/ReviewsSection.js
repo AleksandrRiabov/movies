@@ -2,7 +2,6 @@ import React from 'react';
 import { useMovieDetailsContext } from '../../../context/movieDetailsContext';
 import { Link } from 'react-router-dom';
 import ReviewCard from '../../../components/ReviewCard/ReviewCard';
-import Spiner from '../../../components/Spiner/Spiner';
 
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
@@ -14,11 +13,7 @@ const Reviews = ({ one }) => {
 	const { reviews, movieId, title, loading, error } = useMovieDetailsContext();
 
 	if (loading) {
-		return (
-			<Box className={classes.root}>
-				<Spiner color="#5f5f5f" />
-			</Box>
-		);
+		return null;
 	}
 
 	if (error.isError) {
@@ -28,7 +23,7 @@ const Reviews = ({ one }) => {
 	const total = reviews.length;
 
 	return (
-		<Box className={classes.sectionReview}>
+		<Box>
 			<Box>
 				<Box className={classes.title}>
 					<Typography variant="h6">Reviews ({total})</Typography>

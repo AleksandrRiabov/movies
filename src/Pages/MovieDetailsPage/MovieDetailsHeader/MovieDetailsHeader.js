@@ -31,9 +31,9 @@ const MovieDetailsHeader = () => {
 
 	if (loading) {
 		return (
-			<Box className={classes.darkBg}>
+			<Box className={classes.loading}>
 				{' '}
-				<Spiner />
+				<Spiner color="#000"/>
 			</Box>
 		);
 	}

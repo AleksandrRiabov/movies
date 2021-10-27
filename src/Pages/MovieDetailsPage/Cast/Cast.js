@@ -1,6 +1,5 @@
 import React from 'react';
 import { useMovieDetailsContext } from '../../../context/movieDetailsContext';
-import Spiner from '../../../components/Spiner/Spiner';
 
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
@@ -24,11 +23,7 @@ const Cast = () => {
 	const { movieId, credits, loading, error } = useMovieDetailsContext();
 
 	if (loading) {
-		return (
-			<Box className={classes.root}>
-				<Spiner color="#5f5f5f" />
-			</Box>
-		);
+		return null;
 	}
 
 	if (error.isError) {
@@ -57,8 +52,10 @@ const Cast = () => {
 							style={{ display: 'flex', marginLeft: '-10px' }}
 						>
 							<Box className={classes.card}>
-								<Box>
-									<img src={personImage} alt={name} />
+								<Box className={classes.imageWrapper}>
+									<Box className={classes.image}>
+										<img src={personImage} alt={name} />
+									</Box>
 								</Box>
 								<Box className={classes.cardText}>
 									<Typography className={classes.name} variant="subtitle1">

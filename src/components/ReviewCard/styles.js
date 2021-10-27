@@ -8,6 +8,7 @@ export const useStyles = makeStyles((theme) => ({
 		boxShadow: '0 2px 8px rgb(0 0 0 / 10%)',
 		border: '1px solid #dedede',
 		marginBottom: '25px',
+		maxWidth: "100%"
 	},
 	grouped: {
 		width: '100%',

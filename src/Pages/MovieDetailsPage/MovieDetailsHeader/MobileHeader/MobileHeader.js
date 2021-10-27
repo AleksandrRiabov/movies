@@ -45,7 +45,7 @@ const MovieDetailsHeader = ({ details, loading, error }) => {
 				}}
 			>
 				<Box className={classes.headerPoster}>
-					<img style={{ width: '100%' }} src={poster} alt="alt" />
+					<img style={{ width: '100%', borderRadius: '5px' }} src={poster} alt="alt" />
 				</Box>
 			</div>
 
