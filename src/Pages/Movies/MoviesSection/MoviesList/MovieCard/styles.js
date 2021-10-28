@@ -1,6 +1,9 @@
 import { makeStyles } from '@material-ui/core/styles';
 
 export const useStyles = makeStyles({
+	card: {
+		padding: '3px',
+	},
 	root: {
 		maxWidth: 345,
 		background: '#1c1f35',

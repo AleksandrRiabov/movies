@@ -20,7 +20,7 @@ function MovieCard({ data }) {
 		: 'https://via.placeholder.com/300x450';
 
 	return (
-		<>
+		<Box className={classes.card}>
 			{!data ? (
 				<>
 					<Skeleton
@@ -68,7 +68,7 @@ function MovieCard({ data }) {
 					</Card>
 				</Link>
 			)}
-		</>
+		</Box>
 	);
 }
 
