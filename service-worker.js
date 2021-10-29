@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.2/workbox-sw.js");
 
 importScripts(
-  "AleksandrRiabov.github.io/movies/precache-manifest.74a3cbc01e27e644a80d1b6acb4c3ecb.js"
+  "/movies/precache-manifest.7bb0f1ce43f1b91a2ab2079951e3f4e4.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("AleksandrRiabov.github.io/movies/index.html", {
+workbox.routing.registerNavigationRoute("/movies/index.html", {
   
   blacklist: [/^\/_/,/\/[^\/]+\.[^\/]+$/],
 });
