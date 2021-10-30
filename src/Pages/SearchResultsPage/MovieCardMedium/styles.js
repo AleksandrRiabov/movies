@@ -14,7 +14,7 @@ export const useStyles = makeStyles((theme) => ({
 	imageWrapper: {
 		width: '94px',
 		height: '141px',
-		backgroundColor: '#e3e3e3',
+		backgroundColor: '#eee',
 	},
 	content: {
 		display: 'flex',

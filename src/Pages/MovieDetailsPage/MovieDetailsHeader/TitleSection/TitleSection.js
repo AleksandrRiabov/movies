@@ -23,11 +23,20 @@ const TityleSection = () => {
 	const runTime = countRuntime(runtime);
 	const countries = production_countries.map((country) => country.iso_3166_1).join(', ');
 
+	let d = new Date(release_date);
+	let ye = new Intl.DateTimeFormat('en', { year: 'numeric' }).format(d);
+	let mo = new Intl.DateTimeFormat('en', { month: 'short' }).format(d);
+	let da = new Intl.DateTimeFormat('en', { day: '2-digit' }).format(d);
+
+	const releaseDate = `${da}-${mo}-${ye}`;
+
 	return (
 		<Box className={classes.title}>
-			<Typography variant="h3" className={classes.titleSize}>{title}</Typography>
+			<Typography variant="h3" className={classes.titleSize}>
+				{title}
+			</Typography>
 			<Box className={classes.facts}>
-				<span>{release_date}</span>
+				<span>{releaseDate}</span>
 				<span>{countries && ` (${countries}) -`}</span>
 				{genres &&
 					genres.map(({ name }, index) => {

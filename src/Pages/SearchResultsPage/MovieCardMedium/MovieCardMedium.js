@@ -4,16 +4,24 @@ import Box from '@material-ui/core/Box';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import { useStyles } from './styles';
+import noImage from '../../../images/noImage.svg.png';
 
-const MovieCardMedium = ({ movie: { id, title, overview, release_date, poster_path } }) => {
+const MovieCardMedium = ({
+	movie: { id, title, overview, release_date, poster_path, backdrop_path },
+}) => {
 	const classes = useStyles();
-	const imgUrl = `https://www.themoviedb.org/t/p/w94_and_h141_bestv2${poster_path}`;
+	const imgUrl = poster_path
+		? `https://www.themoviedb.org/t/p/w94_and_h141_bestv2${poster_path}`
+		: backdrop_path
+		? `https://www.themoviedb.org/t/p/w94_and_h141_bestv2${backdrop_path}`
+		: noImage;
+
 	return (
 		<Paper key={id} className={classes.card}>
 			<Link to={`/movie/${id}`}>
 				<Box>
 					<Box className={classes.imageWrapper}>
-						<img src={imgUrl} alt="" />
+						<img src={imgUrl} alt="" width="100%" />
 					</Box>
 				</Box>
 			</Link>

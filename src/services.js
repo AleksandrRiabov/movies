@@ -1,10 +1,6 @@
 import { API_URL, API_KEY_3 } from './api/api';
 
-
-export const getMovies = async ({url}) => {
-	// const genresQuery = genres.length ? `${encodeURI('&with_genres=' + genres.join(','))}` : '';
-
-	// const url = `${API_URL}/discover/movie?api_key=${API_KEY_3}&sort_by=${filter}${genresQuery}&page=${page}`;
+export const getMovies = async ({ url }) => {
 	try {
 		const response = await fetch(url);
 		if (response.status !== 200) {
@@ -15,7 +11,7 @@ export const getMovies = async ({url}) => {
 		}
 	} catch (err) {
 		console.log(err);
-		return err
+		return err;
 	}
 };
 
@@ -33,8 +29,6 @@ export const getMovieDetails = async (movieId, extra) => {
 		console.log(err);
 	}
 };
-
-
 
 export const getPersonDetails = async ({ id }) => {
 	const extra = [`movie_credits`, `external_ids`];

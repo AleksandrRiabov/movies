@@ -11,13 +11,14 @@ import MovieRating from '../../../../../components/MovieRating/MovieRating';
 import StarRateIcon from '@material-ui/icons/StarRate';
 import Skeleton from '@material-ui/lab/Skeleton';
 import { Link } from 'react-router-dom';
+import noImage from '../../../../../images/noImage300x450.png';
 
 function MovieCard({ data }) {
 	const classes = useStyles();
 
 	const imgUrl = data.poster_path
 		? `https://image.tmdb.org/t/p/w500${data.poster_path}`
-		: 'https://via.placeholder.com/300x450';
+		: noImage;
 
 	return (
 		<Box className={classes.card}>
