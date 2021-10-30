@@ -7,7 +7,7 @@ Third party libraries:
 <li> Material UI</li>
 <li>React-Router-Dom.</li>
 <br>
-<a href="https://aleksandrriabov.github.io/movies/"> See4Demo</a>
+<a href="https://aleksandrriabov.github.io/movies/"> See Demo</a>
 <hr>
 <h3>How to run the app</h3>
 <ul>
