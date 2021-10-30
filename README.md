@@ -1,5 +1,5 @@
 <h1>MOVIES APP</h1>
-Ract App wich use a real API to display movies.
+Ract App which use a real API to display movies.
 <br>
 Third party libraries: 
 <ul>
