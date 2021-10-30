@@ -11,6 +11,7 @@ import Spiner from '../../../components/Spiner/Spiner';
 import WatchProviders from './WatchProviders/WatchProviders';
 import TopCrew from './TopCrew/TopCrew';
 import MobileHeader from './MobileHeader/MobileHeader';
+import noImage from "../../../images/noImage300x450.png"
 
 const MovieDetailsHeader = () => {
 	const classes = useStyles();
@@ -49,7 +50,7 @@ const MovieDetailsHeader = () => {
 	})`;
 	const poster = poster_path
 		? `https://image.tmdb.org/t/p/w500/${poster_path}`
-		: 'https://via.placeholder.com/300x450';
+		: noImage;
 
 	if (isSmallScreen) {
 		return <MobileHeader details={details} loading={loading} error={error} />;
