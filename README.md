@@ -7,6 +7,7 @@ Third party libraries:
 <li> Material UI</li>
 <li>React-Router-Dom.</li>
 <br>
+<a href="https://aleksandrriabov.github.io/movies/"> See4Demo</a>
 <hr>
 <h3>How to run the app</h3>
 <ul>
@@ -40,7 +41,7 @@ Any contributions, large or small, major features, bug fixes, are welcomed and a
 <img src="/src/images/GITHUB_SCREENS/9USV0VVv0gE.jpg" width="800px">
 
 <h3>Mobile</h3>
-<img src="/src/images/GITHUB_SCREENS/3Uvm4o0f-4E.jpg" width="800px">
-<img src="/src/images/GITHUB_SCREENS/4DRdCJlBs20.jpg" width="800px">
-<img src="/src/images/GITHUB_SCREENS/TZh9EGyuHBk.jpg" width="800px">
-<img src="/src/images/GITHUB_SCREENS/PoJdbLfkysU.jpg" width="800px">
+<img src="/src/images/GITHUB_SCREENS/3Uvm4o0f-4E.jpg" width="400px">
+<img src="/src/images/GITHUB_SCREENS/4DRdCJlBs20.jpg" width="400px">
+<img src="/src/images/GITHUB_SCREENS/TZh9EGyuHBk.jpg" width="400px">
+<img src="/src/images/GITHUB_SCREENS/PoJdbLfkysU.jpg" width="400px">
