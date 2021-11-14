@@ -2,8 +2,6 @@ export const API_URL = process.env.REACT_APP_API_URL;
 
 export const  API_KEY_3 = process.env.REACT_APP_API_KEY_3;
 
-// export const  API_KEY_4 = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmNjA5MmUyZWUyYjM0ZDExNDI0ZDg5NjA4OGQ2YWMyZCIsInN1YiI6IjYxMzEzYjEyZTFmYWVkMDA4NWExZjFlMSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.Lc5RTKgArpbmdo5GXg69LT4rZ4AULWs_AQIqf_tCtXM";
-
 
 export const GENRES = [
 		{id:28,name:"Action"},
