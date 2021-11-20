@@ -11,31 +11,31 @@ import ReviewsSection from './ReviewsSection/ReviewsSection';
 import MovieTrailer from './MovieTrailer/MovieTrailer';
 
 const MovieDetailsPage = () => {
-	const classes = useStyles();
+  const classes = useStyles();
 
-	return (
-		<Box>
-			<MovieDetailsHeader />
-			<Box className={classes.whiteSection}>
-				<Container className={classes.witeSectionWrapper}>
-					<Grid container spaces={3}>
-						<Grid item xs={12} md={9}>
-							<Box className={classes.leftColumn}>
-								<Cast />
-								<hr />
-								<ReviewsSection />
-								<MovieTrailer />
-								<RecomendetMovies />
-							</Box>
-						</Grid>
-						<Grid item xs={12} md={3}>
-							<StatisticsBar />
-						</Grid>
-					</Grid>
-				</Container>
-			</Box>
-		</Box>
-	);
+  return (
+    <Box>
+      <MovieDetailsHeader />
+      <Box className={classes.whiteSection}>
+        <Container className={classes.witeSectionWrapper}>
+          <Grid container spaces={3}>
+            <Grid item xs={12} md={9}>
+              <Box className={classes.leftColumn}>
+                <Cast />
+                <hr />
+                <ReviewsSection />
+                <MovieTrailer />
+                <RecomendetMovies />
+              </Box>
+            </Grid>
+            <Grid item xs={12} md={3}>
+              <StatisticsBar />
+            </Grid>
+          </Grid>
+        </Container>
+      </Box>
+    </Box>
+  );
 };
 
 export default MovieDetailsPage;

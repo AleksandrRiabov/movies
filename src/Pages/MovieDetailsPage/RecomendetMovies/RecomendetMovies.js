@@ -6,44 +6,44 @@ import HorizontalListing from '../../../components/HorizontalListing/HorizontalL
 import MovieCardSmall from '../../../components/MovieCardSmall/MovieCardSmall';
 
 const useStyles = makeStyles((theme) => ({
-	root: {
-		position: 'relative',
-		width: '100%',
-		height: '200px',
-	},
+  root: {
+    position: 'relative',
+    width: '100%',
+    height: '200px',
+  },
 }));
 
 const RecomendetMovies = () => {
-	const classes = useStyles();
-	const {
-		details: { recommendations },
-		loading,
-		error,
-	} = useMovieDetailsContext();
+  const classes = useStyles();
+  const {
+    details: { recommendations },
+    loading,
+    error,
+  } = useMovieDetailsContext();
 
-	if (loading) {
-		return null;
-	}
+  if (loading) {
+    return null;
+  }
 
-	if (error.isError) {
-		return (
-			<HorizontalListing title="Recommendations">
-				<Box className={classes.root}>{error.message}</Box>
-			</HorizontalListing>
-		);
-	}
+  if (error.isError) {
+    return (
+      <HorizontalListing title='Recommendations'>
+        <Box className={classes.root}>{error.message}</Box>
+      </HorizontalListing>
+    );
+  }
 
-	return (
-		<HorizontalListing title="Recommendations">
-			{recommendations && recommendations.results.length ? (
-				recommendations.results.map((movie) => {
-					return <MovieCardSmall key={movie.id} movie={movie} />;
-				})
-			) : (
-				<p>We don't have enough data to suggest any movies.</p>
-			)}
-		</HorizontalListing>
-	);
+  return (
+    <HorizontalListing title='Recommendations'>
+      {recommendations && recommendations.results.length ? (
+        recommendations.results.map((movie) => {
+          return <MovieCardSmall key={movie.id} movie={movie} />;
+        })
+      ) : (
+        <p>We don't have enough data to suggest any movies.</p>
+      )}
+    </HorizontalListing>
+  );
 };
 
 export default RecomendetMovies;

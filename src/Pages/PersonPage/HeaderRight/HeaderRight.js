@@ -8,41 +8,41 @@ import HorizontalListing from '../../../components/HorizontalListing/HorizontalL
 import MovieCardSmall from '../../../components/MovieCardSmall/MovieCardSmall';
 
 const useStyles = makeStyles((theme) => ({
-	biography: {
-		paddingTop: '30px',
-	},
-	bold: {
-		fontWeight: '600',
-	},
+  biography: {
+    paddingTop: '30px',
+  },
+  bold: {
+    fontWeight: '600',
+  },
 }));
 
 const HeaderRight = ({ name, biography, movie_credits }) => {
-	const classes = useStyles();
+  const classes = useStyles();
 
-	return (
-		<>
-			<Box>
-				<Hidden only={['xs', 'sm']}>
-					<Typography variant="h4">{name}</Typography>
-				</Hidden>
-				<Box className={classes.biography}>
-					<Typography variant="h6" className={classes.bold} gutterBottom>
-						Biography
-					</Typography>
-					<Text>{biography || `We don't have a biography for ${name}.`}</Text>
-				</Box>
-			</Box>
-			<Box className={classes.movies}>
-				<HorizontalListing title={'Known For'}>
-					{movie_credits
-						? movie_credits.map((movie) => {
-								return <MovieCardSmall key={movie.id} movie={movie} />;
-						  })
-						: null}
-				</HorizontalListing>
-			</Box>
-		</>
-	);
+  return (
+    <>
+      <Box>
+        <Hidden only={['xs', 'sm']}>
+          <Typography variant='h4'>{name}</Typography>
+        </Hidden>
+        <Box className={classes.biography}>
+          <Typography variant='h6' className={classes.bold} gutterBottom>
+            Biography
+          </Typography>
+          <Text>{biography || `We don't have a biography for ${name}.`}</Text>
+        </Box>
+      </Box>
+      <Box className={classes.movies}>
+        <HorizontalListing title={'Known For'}>
+          {movie_credits
+            ? movie_credits.map((movie) => {
+                return <MovieCardSmall key={movie.id} movie={movie} />;
+              })
+            : null}
+        </HorizontalListing>
+      </Box>
+    </>
+  );
 };
 
 export default HeaderRight;

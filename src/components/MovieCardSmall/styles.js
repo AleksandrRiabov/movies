@@ -9,6 +9,7 @@ export const useStyles = makeStyles((theme) => ({
     height: '141px',
     borderRadius: '10px',
     overflow: 'hidden',
+    background: '#000',
   },
   cardText: {
     display: 'flex',
