@@ -29,6 +29,9 @@ export default function PaginationBar({
 }) {
   const classes = useStyles();
 
+  //Due to some bug recently appeared on API provider, cant get data on page bigger then 500. Have to limit if nuimber of total pages is bigger
+  const limitedTotalPages = total_pages > 500 ? 500 : total_pages; 
+
   const handleChange = (event, value) => {
     if (value === page) {
       return;
@@ -41,7 +44,7 @@ export default function PaginationBar({
     <div className={classes.root}>
       <Pagination
         classes={{ ul: classes.ul }}
-        count={total_pages}
+        count={limitedTotalPages}
         page={page}
         onChange={handleChange}
       />
