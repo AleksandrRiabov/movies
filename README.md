@@ -1,7 +1,7 @@
 <h1>MOVIES APP</h1>
-Ract App which use a real API to display movies.
+React App which uses a real API to display movies.
 <br>
-Third party libraries: 
+Third-party libraries: 
 <ul>
 </ul>
 <li> Material UI</li>
@@ -22,17 +22,17 @@ User can:
 	<li>View all movies.</li>
 	<li>Sort movies by selected filter. (Default - By Popularity ).</li>
 	<li>View movies of selected genres.</li>
-	<li>View movie details (Name, Release date, Duration, Genres, Rviews, Social Networks Accounts, ect..).</li>
-	<li>View movies trailers.</li>
-	<li>View movie recomendations.</li>
-	<li>View actors biography and movies list.</li>
+	<li>View movie details (Name, Release date, Duration, Genres, Rviews, Social Networks Accounts, etc..).</li>
+	<li>View movie trailers.</li>
+	<li>View movie recommendations.</li>
+	<li>View the actor's biography and movies list.</li>
 	
 </ul>
 
 <h2>Contributing </h2>
 Please fork this repository and contribute back using pull requests.
 <br>
-Any contributions, large or small, major features, bug fixes, are welcomed and appreciated but will be thoroughly reviewed .
+Any contributions, large or small, major features, and bug fixes, are welcomed and appreciated but will be thoroughly reviewed.
 
 <h3>Desctop</h3>
 <img src="/src/images/GITHUB_SCREENS/10ykW9lO0lc.jpg" width="800px">
