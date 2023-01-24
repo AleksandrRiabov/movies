@@ -1,22 +1,28 @@
 # Introduction
-Welcome to the MOVIES APP, a React application that utilizes a real API to display movies from The Movie Database (TMDB). This app allows users to browse through a wide selection of movies and filter them by various criteria such as popularity, genres, and release date. Users can also view detailed information about each movie, including its trailers, reviews, and recommendations.
+Welcome to the MOVIES APP, a React application that utilizes a real API to display movies from [The Movie Database (TMDB)](https://www.themoviedb.org/?language=en-GB). This app allows users to browse through a wide selection of movies and filter them by various criteria such as popularity, genres, and release date. Users can also view detailed information about each movie, including its trailers, reviews, and recommendations.
 
 ## Third-Party Libraries
 The following libraries were used to build this app:
 
-- Material UI for styling and UI components
+- Material UI for styling and UI components 
 - React Router for client-side routing
 - React JS as the main framework
+
+ [![React Badge](https://img.shields.io/badge/-React-61DBFB?style=for-the-badge&labelColor=black&logo=react&logoColor=61DBFB)](#)
+ [![React Router Dom Badge](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)](#)
+ [![Mui Badge](https://img.shields.io/badge/Material%20UI-007FFF?style=for-the-badge&logo=mui&logoColor=white)](#)
+
+
 ## Demo
 You can check out a live demo of the app :point_right: [ here ](https://aleksandrriabov.github.io/movies/) :point_left:
 
 ## Getting Started
 To run the app on your local machine, please follow these steps:
 
-1 Fork or download the app
-2 Open the folder in your command line interface (CLI)
-3 Run 'npm i' to install all dependencies
-4 Start the app by running 'npm start'
+1. Fork or download the app
+2. Open the folder in your command line interface (CLI)
+3. Run **`npm i`** to install all dependencies
+4. Start the app by running **`npm start`**
 
 ## User Stories
 - View all movies
@@ -35,13 +41,14 @@ If you have any questions or feedback, please reach out to me at email [sania.ri
 
 
 ## Desctop
-<img src="/src/images/GITHUB_SCREENS/10ykW9lO0lc.jpg" width="800px">
-<img src="/src/images/GITHUB_SCREENS/R0GQoyjuE94.jpg" width="800px">
-<img src="/src/images/GITHUB_SCREENS/NcllrjsrKzk.jpg" width="800px">
-<img src="/src/images/GITHUB_SCREENS/9USV0VVv0gE.jpg" width="800px">
+### Home page
+<img width="1235" alt="Home page" src="https://user-images.githubusercontent.com/61385379/214215639-1d746f56-4902-4761-9549-48982168e5d6.png">
+
+### Movie Details page
+<img width="1231" alt="Movie page" src="https://user-images.githubusercontent.com/61385379/214215842-1bb273f6-77ed-453d-b527-c9c73eb9e8ab.png">
+
+
 
 ## Mobile
-<img src="/src/images/GITHUB_SCREENS/3Uvm4o0f-4E.jpg" width="400px">
-<img src="/src/images/GITHUB_SCREENS/4DRdCJlBs20.jpg" width="400px">
-<img src="/src/images/GITHUB_SCREENS/TZh9EGyuHBk.jpg" width="400px">
-<img src="/src/images/GITHUB_SCREENS/PoJdbLfkysU.jpg" width="400px">
+<img src="/src/images/GITHUB_SCREENS/4DRdCJlBs20.jpg" width="400px">  - <img src="/src/images/GITHUB_SCREENS/3Uvm4o0f-4E.jpg" width="400px"> 
+<img src="/src/images/GITHUB_SCREENS/TZh9EGyuHBk.jpg" width="400px">  - <img src="/src/images/GITHUB_SCREENS/PoJdbLfkysU.jpg" width="400px">
