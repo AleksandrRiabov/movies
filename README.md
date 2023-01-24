@@ -1,46 +1,46 @@
-<h1>MOVIES APP</h1>
-React App which uses a real API to display movies.
-<br>
-Third-party libraries: 
-<ul>
-</ul>
-<li> Material UI</li>
-<li>React-Router-Dom.</li>
-<br>
-<a href="https://aleksandrriabov.github.io/movies/"> See Demo</a>
-<hr>
-<h3>How to run the app</h3>
-<ul>
-	<li>Either fork or download the app and open the folder in the cli.</li>
-	<li>Install all dependencies using the "npm i" command.</li>
-	<li>Start App using "npm start" command.</li>
-</ul>	
+# Introduction
+Welcome to the MOVIES APP, a React application that utilizes a real API to display movies from The Movie Database (TMDB). This app allows users to browse through a wide selection of movies and filter them by various criteria such as popularity, genres, and release date. Users can also view detailed information about each movie, including its trailers, reviews, and recommendations.
 
-<h3>User Stories</h3>
-User can:
-<ul>
-	<li>View all movies.</li>
-	<li>Sort movies by selected filter. (Default - By Popularity ).</li>
-	<li>View movies of selected genres.</li>
-	<li>View movie details (Name, Release date, Duration, Genres, Rviews, Social Networks Accounts, etc..).</li>
-	<li>View movie trailers.</li>
-	<li>View movie recommendations.</li>
-	<li>View the actor's biography and movies list.</li>
-	
-</ul>
+## Third-Party Libraries
+The following libraries were used to build this app:
 
-<h2>Contributing </h2>
-Please fork this repository and contribute back using pull requests.
-<br>
-Any contributions, large or small, major features, and bug fixes, are welcomed and appreciated but will be thoroughly reviewed.
+- Material UI for styling and UI components
+- React Router for client-side routing
+- React JS as the main framework
+## Demo
+You can check out a live demo of the app :point_right: [ here ](https://aleksandrriabov.github.io/movies/) :point_left:
 
-<h3>Desctop</h3>
+## Getting Started
+To run the app on your local machine, please follow these steps:
+
+1 Fork or download the app
+2 Open the folder in your command line interface (CLI)
+3 Run 'npm i' to install all dependencies
+4 Start the app by running 'npm start'
+
+## User Stories
+- View all movies
+- Sort movies by selected filter (default: popularity)
+- View movies of selected genres
+- View movie details (name, release date, duration, genres, reviews, social network accounts, etc.)
+- View movie trailers
+- View movie recommendations
+- View the actor's biography and movie list
+
+## Contributing
+We welcome and appreciate any contributions, large or small, major features, and bug fixes to this project. Please fork this repository and contribute back using pull requests. All pull requests will be thoroughly reviewed before being merged.
+
+## Contact
+If you have any questions or feedback, please reach out to me at email [sania.riabov@gmail.com](mailto:sania.riabov@gmail.com) or [LinkedIn](https://www.linkedin.com/in/aleksandr-riabov/)
+
+
+## Desctop
 <img src="/src/images/GITHUB_SCREENS/10ykW9lO0lc.jpg" width="800px">
 <img src="/src/images/GITHUB_SCREENS/R0GQoyjuE94.jpg" width="800px">
 <img src="/src/images/GITHUB_SCREENS/NcllrjsrKzk.jpg" width="800px">
 <img src="/src/images/GITHUB_SCREENS/9USV0VVv0gE.jpg" width="800px">
 
-<h3>Mobile</h3>
+## Mobile
 <img src="/src/images/GITHUB_SCREENS/3Uvm4o0f-4E.jpg" width="400px">
 <img src="/src/images/GITHUB_SCREENS/4DRdCJlBs20.jpg" width="400px">
 <img src="/src/images/GITHUB_SCREENS/TZh9EGyuHBk.jpg" width="400px">
